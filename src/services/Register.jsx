@@ -29,7 +29,7 @@ import { RiLockPasswordFill } from 'react-icons/ri';
   }
 
   return (
-    <div className='flex justify-center items-center'>
+    <div className='flex justify-center items-center mt-5'>
         <div className='max-w-4xl h-[670px] border flex justify-content-center items-center'>
           <div className='w-[50%] h-full bg-cover flex px-14 items-center' style={{backgroundImage: `url(${image1})`}}>
             <div>
