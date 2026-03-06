@@ -1,14 +1,13 @@
-import { BrowserRouter } from 'react-router-dom'
-import AppRoutes from './routes'
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes";
+import ResetPassword from "../public-site/pages/ResetPassword";
 
 function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
-      <h1 className='text-amber-200'>Hello World</h1>
-      <h1>Hello</h1>
+      <ResetPassword />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
