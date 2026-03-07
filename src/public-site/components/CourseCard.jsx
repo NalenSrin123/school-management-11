@@ -13,6 +13,7 @@ function CourseCard({image,title,category,rating}) {
     width: "40px",
     color: "white",
     fontSize: "28px"
+  
   }}
 >
 ♡
