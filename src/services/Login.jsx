@@ -105,8 +105,8 @@ function Login() {
                     </button>
 
                     <button className="w-full h-11 sm:h-12 flex items-center justify-center gap-2 bg-black text-white rounded-xl shadow-md hover:bg-gray-800 transition">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="twitter" className="w-5 h-5" />
-                        Continue with Twitter
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="github" className="w-5 h-5" />
+                        Continue with Github
                     </button>
                 </div>
 
