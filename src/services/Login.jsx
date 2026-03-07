@@ -4,7 +4,7 @@ function Login() {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-900/20 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen flex items-center justify-center bg-gray-900/15 px-4 sm:px-6 lg:px-8">
             <div className="bg-white w-full max-w-sm sm:max-w-md p-6 sm:p-8 rounded-2xl shadow-2xl ">
 
                 {/* Header */}
