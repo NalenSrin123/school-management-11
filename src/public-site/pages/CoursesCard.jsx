@@ -66,7 +66,7 @@ const courses = [
   }
 ];
 
-function Courses() {
+function CoursesCard() {
   return (
     <div className="courses-container">
       <div className="course-grid">
@@ -85,4 +85,4 @@ function Courses() {
   );
 }
 
-export default Courses;
+export default CoursesCard;
