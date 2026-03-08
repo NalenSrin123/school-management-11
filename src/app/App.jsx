@@ -8,7 +8,7 @@ function App() {
       <AppRoutes />
       <Courses/>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
