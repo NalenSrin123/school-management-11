@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Courses() {
+function CoursesCard() {
   const courseItems = [
    
     
@@ -74,4 +74,4 @@ function Courses() {
   );
 }
 
-export default Courses;
+export default CoursesCard;
