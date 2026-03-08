@@ -19,7 +19,6 @@ function CourseCard({image,title,category,rating}) {
 ♡
 </span>
       </div>
-
       <div className="card-body">
 
         <p className="category">{category}</p>
