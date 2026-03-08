@@ -1,12 +1,13 @@
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './routes'
-import ConfoirmOTPpage from '../public-site/pages/ConfoirmOTPpage'
+import ConfirmOTPpage from '../public-site/pages/ConfirmOTPpage'
 
 function App() {
   return (
     <BrowserRouter>
       {/* <AppRoutes /> */}
-      <ConfoirmOTPpage/>
+      <ConfirmOTPpage/>
+      
     </BrowserRouter>
   )
 }
