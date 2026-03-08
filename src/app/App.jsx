@@ -12,6 +12,7 @@ import Footer from './Footer';
 import HeroSection from '../public-site/components/HeroSection';
 import CourseCard from '../public-site/components/CourseCard';
 import Reset_password from '../public-site/pages/Reset_password';
+import Features from '../public-site/pages/Design_Feature_in_home_page';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <HeroSection/>
       {/* <CourseCard/> */}
       <Reset_password/>
+      <Features/>
     </BrowserRouter>
    
   );
