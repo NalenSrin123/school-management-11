@@ -9,9 +9,9 @@ function Login() {
 
                 {/* Header */}
                 <div className=" flex flex-col  items-center justify-center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmfgEsISgcMna9mdI-t_XY7o-WkAI0ctitvg&s" alt="" className=" w-25" />
-                <h1 className="text-2xl sm:text-3xl font-bold text-center mb-2">Login</h1>
-                <p className="text-center text-gray-500 text-sm sm:text-base mb-6">Access your dashboard</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmfgEsISgcMna9mdI-t_XY7o-WkAI0ctitvg&s" alt="" className=" w-25" />
+                    <h1 className="text-2xl sm:text-3xl font-bold text-center mb-2">Login</h1>
+                    <p className="text-center text-gray-500 text-sm sm:text-base mb-6">Access your dashboard</p>
                 </div>
                 {/* Form */}
                 <form className="space-y-4">
@@ -28,14 +28,14 @@ function Login() {
                         <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="lock" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2"
                         />
 
-                        <input type={showPassword ? "text" : "password"}  placeholder="Password" className="w-full h-11 sm:h-12 pl-10 pr-10 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <input type={showPassword ? "text" : "password"} placeholder="Password" className="w-full h-11 sm:h-12 pl-10 pr-10 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" />
 
                         <button
                             type="button"
                             onClick={() => setShowPassword(!showPassword)}
                             className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition"
                         >
-                            {showPassword ? (
+                            {/* {showPassword ? (
 
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ function Login() {
                                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                                     />
                                 </svg>
-                            )}
+                            )} */}
                         </button>
                     </div>
 
