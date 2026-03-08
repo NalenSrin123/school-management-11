@@ -1,11 +1,13 @@
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './routes'
-import Login from '../services/Login'
+import Courses from '../public-site/pages/Courses'
+
 function App() {
   return (
     <BrowserRouter>
-      {/* <AppRoutes /> */}
-      <Login/>
+      <AppRoutes />
+      <Courses/>
+
     </BrowserRouter>
   )
 }
