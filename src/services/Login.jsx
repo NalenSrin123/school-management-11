@@ -15,9 +15,10 @@ function Login() {
                     <p className="text-center text-gray-500 text-sm sm:text-base mb-6">Access your dashboard</p>
                 </div>
                 {/* Form */}
-                <form className="space-y-4">
+                <form className="space-y-3">
 
                     {/* Email */}
+                    <p className=" text-md">Email or Username</p>
                     <div className="relative">
                         <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2" />
                         <input type="email" placeholder="Email or Username" className="w-full h-11 sm:h-12 pl-10 pr-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -25,6 +26,10 @@ function Login() {
                     </div>
 
                     {/* Password */}
+                   <div className=" flex justify-between items-center">
+                     <p className=" text-md">Password</p>
+                     <p className=" text-md text-blue-500">Forgot Password?</p>
+                   </div>
                     <div className="relative">
 
                         <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="lock" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2"
