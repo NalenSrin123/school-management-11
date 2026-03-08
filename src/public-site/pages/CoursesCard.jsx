@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Courses() {
+function CoursesCard() {
   const courseItems = [
    
     

@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './routes'
-import Courses from '../public-site/pages/Courses'
+
 import Register from '../services/Register';
 import ConfirmOTPpage from '../public-site/pages/ConfoirmOTPpage';
 import ResetPassword from '../public-site/pages/ResetPassword';
@@ -10,15 +10,19 @@ import Position from '../public-site/pages/Position';
 import Login from '../services/Login';
 import Footer from './Footer';
 import HeroSection from '../public-site/components/HeroSection';
-import CourseCard from '../public-site/components/CourseCard';
 import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
+import CoursesCard from '../public-site/pages/CoursesCard';
+import Courses from '../public-site/pages/Course';
+
+
+
 
 function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
-      <Courses/>
+    <Courses/>
       <Register/>
       <ConfirmOTPpage/>
       <ResetPassword/>
@@ -28,9 +32,9 @@ function App() {
       <Login/>
       <Footer/>
       <HeroSection/>
-      {/* <CourseCard/> */}
+  
       <Reset_password/>
-      <CourseCard/>
+    
       <Navbar/>
       
     </BrowserRouter>
