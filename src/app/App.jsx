@@ -11,6 +11,7 @@ import Login from '../services/Login';
 import Footer from './Footer';
 import HeroSection from '../public-site/components/HeroSection';
 import CourseCard from '../public-site/components/CourseCard';
+import Reset_password from '../public-site/pages/Reset_password';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Footer/>
       <HeroSection/>
       {/* <CourseCard/> */}
+      <Reset_password/>
     </BrowserRouter>
    
   );
