@@ -6,6 +6,6 @@ import Internship from './public-site/pages/internship.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Internship/>
+    <App />
   </StrictMode>,
 )
