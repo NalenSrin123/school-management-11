@@ -32,7 +32,7 @@ function App() {
       <Login/>
       <Footer/>
       <HeroSection/>
-  
+
       <Reset_password/>
     
       <Navbar/>
