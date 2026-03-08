@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { MdOutlineMail } from "react-icons/md";
 
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-900/15 px-4 sm:px-6 lg:px-8">
-            <div className="bg-white w-full max-w-sm sm:max-w-md p-6 sm:p-8 rounded-2xl shadow-2xl ">
+        <div className="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8">
+            <div className="bg-white w-full max-w-sm sm:max-w-md p-6 sm:p-8 rounded-2xl shadow-xl ">
 
                 {/* Header */}
                 <div className=" flex flex-col  items-center justify-center">
@@ -19,12 +20,13 @@ function Login() {
                     {/* Email */}
                     <div className="relative">
                         <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2" />
-                        <input type="email" placeholder="Email" className="w-full h-11 sm:h-12 pl-10 pr-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        <input type="email" placeholder="Email or Username" className="w-full h-11 sm:h-12 pl-10 pr-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>
 
                     {/* Password */}
                     <div className="relative">
+
                         <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="lock" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2"
                         />
 
@@ -35,44 +37,7 @@ function Login() {
                             onClick={() => setShowPassword(!showPassword)}
                             className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition"
                         >
-                            {/* {showPassword ? (
-
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M13.875 18.825A10.05 10.05 0 0112 19c-5 0-9-5-9-5s1.677-2.484 4.197-4.03M9.88 9.88A3 3 0 1114.12 14.12M15 15l6 6m-6-6L3 3"
-                                    />
-                                </svg>
-                            ) : (
-
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                                    />
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                                    />
-                                </svg>
-                            )} */}
+                           
                         </button>
                     </div>
 
@@ -83,6 +48,12 @@ function Login() {
                     >
                         Login
                     </button>
+                    <div>
+                        <div className="flex gap-2">
+                        <input type="checkbox" name="" id=""  />
+                        <p className=" text-blue-500 text-md">Keep me login</p>
+                        </div>
+                    </div>
                 </form>
 
                 {/* Divider */}
@@ -108,6 +79,10 @@ function Login() {
                         <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="github" className="w-5 h-5" />
                         Continue with Github
                     </button>
+                    <div className="flex items-center justify-center cursor-pointer ">
+                        <h1>Don't have account ?</h1>
+                        <p className="text-blue-500">Register your account </p>
+                    </div>
                 </div>
 
             </div>
