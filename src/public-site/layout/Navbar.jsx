@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -20,10 +21,10 @@ const Navbar = () => {
 
        
         <ul className="hidden lg:flex items-center gap-6 text-[11px] font-bold uppercase tracking-widest">
-          <li className="text-[#FF9800] cursor-pointer hover:opacity-80 transition">Home</li>
-          <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">About Us</li>
-          <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Internship</li>
-          <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Donate</li>
+          <Link to='/'><li className="text-[#FF9800] cursor-pointer hover:opacity-80 transition">Home</li></Link>
+          <Link to='/about'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">About Us</li></Link>
+          <Link to='/kruinternship'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Internship</li></Link>
+          <Link to='/donate'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Donate</li></Link>
           <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition flex items-center gap-1">
             Our Courses <span className="text-[10px]">▼</span>
           </li>

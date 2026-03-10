@@ -1,6 +1,8 @@
 import { useState } from "react";
 import internshipImg from "./image/Screenshot 2026-03-06 213518.png"; 
 import footerImg from "./image/291899231_490273779567291_1388030499081494942_n.png";
+
+
 const googlePlayIcon = (
   <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
     <path d="M3.18 23.76c.3.17.64.24.99.2l12.6-11.43L13.1 8.86 3.18 23.76zm17.6-11.37c.29-.22.47-.56.47-.93s-.18-.71-.47-.93L18.1 9.3l-3.13 2.84 3.13 2.84 2.68-1.59zM3.48.24a1.1 1.1 0 0 0-.3.8v21.92c0 .3.1.58.3.8L13.1 12 3.48.24zm9.62 11.33L4.17.44l12.6 11.43-3.67 3.33v-3.63z" />
