@@ -1,22 +1,16 @@
-function Home() {
+import Footer from "../../app/Footer";
+import HeroSection from "../components/HeroSection";
+import Navbar from "../layout/Navbar";
+
+
+const Home = () => {
   return (
-  <div>
-  </div>
-
-
-  
-
-  )
-}
-
-// const Home = () => {
-//   return (
-//     // h-screen: កម្ពស់ស្មើអេក្រង់ | overflow-hidden: បិទការ Scroll
-//     <div className="h-screen w-full overflow-hidden bg-[#0288D1] relative">
-//       <Navbar />
-//       <HeroSection />
-//     </div>
-//   );
-// };
+    <div className="h-auto w-full overflow-hidden">
+      <Navbar />
+      <HeroSection />
+      <Footer/>
+    </div>
+  );
+};
 
 export default Home;
