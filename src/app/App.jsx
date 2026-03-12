@@ -21,6 +21,8 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
+    {/*<Courses/>*/}
+      <CoursesCard />
       <Register/>
       <ConfirmOTPpage/>
       <ResetPassword/>
