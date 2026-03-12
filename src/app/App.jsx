@@ -13,8 +13,6 @@ import HeroSection from '../public-site/components/HeroSection';
 import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
-//import Courses from '../public-site/pages/Course';
-
 
 
 
@@ -34,11 +32,8 @@ function App() {
       <Login/>
       <Footer/>
       <HeroSection/>
-  
       <Reset_password/>
-    
       <Navbar/>
-      
     </BrowserRouter>
    
   );
