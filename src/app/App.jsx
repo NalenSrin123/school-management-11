@@ -21,19 +21,6 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
-    {/*<Courses/>*/}
-      <CoursesCard />
-      <Register/>
-      <ConfirmOTPpage/>
-      <ResetPassword/>
-      <Design_OTP_Page/>
-      <KruInternship/>
-      <Position/>
-      <Login/>
-      <Footer/>
-      <HeroSection/>
-      <Reset_password/>
-      <Navbar/>
     </BrowserRouter>
    
   );

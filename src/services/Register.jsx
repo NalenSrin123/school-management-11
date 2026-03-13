@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import image1 from '../assets/images/image1.jpg';
 import { FaGraduationCap, FaUserAlt } from 'react-icons/fa';
 import google_logo from '../assets/images/google_logo.webp';
 import microsoft_logo from '../assets/images/microsoft_logo.webp';
+import background_regsiter from '../assets/images/background_regsiter.webp'
+import logo_etec from '../assets/images/logo_etec.png'
 import { MdEmail } from 'react-icons/md';
-import { TbLockPassword } from 'react-icons/tb';
 import { RiLockPasswordFill } from 'react-icons/ri';
   const Register = () => {
     const [password,setPassword]=useState("")
@@ -28,14 +28,15 @@ import { RiLockPasswordFill } from 'react-icons/ri';
     validatePasswird(value)
   }
 
+
   return (
     <div className='flex justify-center items-center mt-5'>
-        <div className='max-w-4xl h-[670px] border flex justify-content-center items-center'>
-          <div className='w-[50%] h-full bg-cover flex px-14 items-center' style={{backgroundImage: `url(${image1})`}}>
+        <div className='max-w-4xl h-[670px] md:border flex justify-content-center items-center'>
+          <div className='w-[50%] hidden h-full bg-cover md:flex md:px-14 items-center' style={{backgroundImage: `url(${background_regsiter})`}}>
             <div>
-                <div className='flex items-center gap-3'>
-                  <span className='p-3 rounded bg-white'><FaGraduationCap className="text-blue-500 text-2xl" /></span>
-                  <p className='text-white font-bold'>EduManage Enterprice</p>
+                <div className='flex items-center gap-1'>
+                  <img className='w-16' src={logo_etec} alt="" />
+                  <p className='text-white text-3xl font-bold'><span className='text-yellow-400'>ETEC</span> <span className='text-blue-600'>CENTER</span></p>
                 </div>
                 <h3 className='text-white font-extrabold text-3xl mt-3 leading-10'>Empowering the next generation of educators</h3>
                 <p className='text-white mt-2'>&quot;<i>Education is the most powerful weapon which you can use to change the world.</i>&quot;</p>
@@ -63,7 +64,9 @@ import { RiLockPasswordFill } from 'react-icons/ri';
                 </div>
             </div>
           </div>
-          <div className='w-[50%] h-full flex items-center px-14'>
+
+
+          <div className='md:w-[50%] w-full h-full flex items-center px-8 md:px-14'>
             <div className='w-full'>
               <h4 className='text-2xl font-bold'>Create an Account</h4>
               <div className='text-xs flex items-center mt-2 gap-2'>
@@ -125,9 +128,9 @@ import { RiLockPasswordFill } from 'react-icons/ri';
                 <button className='w-full rounded-md text-white text-xs font-bold bg-blue-500 py-3 mt-2'>Create Account</button>
                 <hr className='mt-5 text-gray-400' />
                 <div className='w-full flex flex-col items-center mt-3'>
-                  <span className='uppercase block text-xs font-bold mt-3 text-gray-400'>Enterpise shool Management system</span>
+                  <span className='uppercase block text-xs font-bold mt-3 text-gray-400'>etec computer center</span>
                   <span className="text-center block text-xs text-gray-500 mt-2">
-                  © {new Date().getFullYear()} EduManage Enterprise. All rights reserved.
+                  © {new Date().getFullYear()} <span className='uppercase'>etec computer center</span>. All rights reserved.
                   </span>
                 </div>
 
@@ -138,5 +141,6 @@ import { RiLockPasswordFill } from 'react-icons/ri';
     </div>
   )
 }
+
 
 export default Register
