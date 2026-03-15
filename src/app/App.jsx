@@ -14,17 +14,17 @@ import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
 import CourseDetail from '../public-site/pages/CourseDetail';
-
-
+import ConfirmOTPpage from '../public-site/pages/ConfirmOTPpage'
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <div>
+      {/* // <BrowserRouter>  */}
       <AppRoutes />
       <Register/>
       <ConfirmOTPpage/>
-      <ResetPassword/>
+      {/* <ResetPassword/> */}
       <Design_OTP_Page/>
       <KruInternship/>
       <Position/>
@@ -33,7 +33,8 @@ function App() {
       <HeroSection/>
       <Reset_password/>
       <Navbar/>
-    </BrowserRouter>
+      </div>
+    // </BrowserRouter>
    
   );
 }
