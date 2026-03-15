@@ -6,7 +6,6 @@ import Reset_password from "../public-site/pages/Reset_password";
 function App() {
   return (
     <BrowserRouter>
-      <ResetPassword />
       <Reset_password />
     </BrowserRouter>
   );
