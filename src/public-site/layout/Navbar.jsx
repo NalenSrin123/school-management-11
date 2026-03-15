@@ -25,9 +25,9 @@ const Navbar = () => {
           <Link to='/about'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">About Us</li></Link>
           <Link to='/kruinternship'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Internship</li></Link>
           <Link to='/donate'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Donate</li></Link>
-          <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition flex items-center gap-1">
+          <Link to='/coursecard'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition flex items-center gap-1">
             Our Courses <span className="text-[10px]">▼</span>
-          </li>
+          </li></Link>
           <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition normal-case">Login</li>
         </ul>
 

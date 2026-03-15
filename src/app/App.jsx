@@ -13,6 +13,7 @@ import HeroSection from '../public-site/components/HeroSection';
 import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
+import CourseDetail from '../public-site/pages/CourseDetail';
 
 
 
@@ -22,6 +23,8 @@ function App() {
     <BrowserRouter>
       <AppRoutes />
       <Register/>
+      <CoursesCard/>
+      <CourseDetail/>
       <ConfirmOTPpage/>
       <ResetPassword/>
       <Design_OTP_Page/>
