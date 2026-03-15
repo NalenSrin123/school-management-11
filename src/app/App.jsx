@@ -1,5 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
+
 import AppRoutes from './routes'
+import About from '../public-site/pages/About'
 
 import Register from '../services/Register';
 import ConfirmOTPpage from '../public-site/pages/ConfoirmOTPpage';
