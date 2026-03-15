@@ -50,7 +50,7 @@ function Reset_password() {
             <p className="text-xs leading-relaxed break-all">
               If the button above doesn't work, copy and paste this link into your browser:{" "}
               <span className="text-blue-500">
-                https://eduflow-systems.com/auth/reset-password?token=8k2j3h45k6j7h8g9f0d1s2a3p4o5i6u7y8t9r0e
+               
               </span>
             </p>
           </div>

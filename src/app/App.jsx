@@ -4,7 +4,6 @@ import AppRoutes from './routes'
 import About from '../public-site/pages/About'
 
 import Register from '../services/Register';
-import ResetPassword from '../public-site/pages/ResetPassword';
 import Design_OTP_Page from '../public-site/pages/Design_OTP_Page';
 import KruInternship from '../public-site/pages/Internship';
 import Position from '../public-site/pages/Position';
