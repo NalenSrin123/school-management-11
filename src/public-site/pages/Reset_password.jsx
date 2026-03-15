@@ -61,13 +61,13 @@ function Reset_password() {
         </div>
 
         <div className="flex flex-col items-center mt-2 bg-gray-50 rounded-b-xl ">
-            <p className="text-xs p-2">
-              Need help? Contact our support team at{" "}
-              <span className="text-blue-500">support@eteccenter.com</span>
-            </p>
-            <p className="text-xs mt-5">ETEC CENTER INC.</p>
-            <p className="text-xs mt-1">Street 160, Toul Kork District</p>
-            <p className="text-xs mt-1 mb-3">Phnom Penh, Cambodia</p>
+          <p className="text-xs p-2">
+            Need help? Contact our support team at{" "}
+            <span className="text-blue-500">support@eteccenter.com</span>
+          </p>
+          <p className="text-xs mt-5">ETEC CENTER INC.</p>
+          <p className="text-xs mt-1">Street 160, Toul Kork District</p>
+          <p className="text-xs mt-1 mb-3">Phnom Penh, Cambodia</p>
         </div>
       </div>
     </div>
