@@ -26,10 +26,10 @@ function Login() {
                     </div>
 
                     {/* Password */}
-                   <div className=" flex justify-between items-center">
-                     <p className=" text-md">Password</p>
-                     <p className=" text-md text-blue-500">Forgot Password?</p>
-                   </div>
+                    <div className=" flex justify-between items-center">
+                        <p className=" text-md">Password</p>
+                        <p className=" text-md text-blue-500 hover:underline sm:text-sm">Forgot Password?</p>
+                    </div>
                     <div className="relative">
 
                         <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="lock" className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2"
@@ -42,7 +42,7 @@ function Login() {
                             onClick={() => setShowPassword(!showPassword)}
                             className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition"
                         >
-                           
+
                         </button>
                     </div>
 
@@ -55,8 +55,8 @@ function Login() {
                     </button>
                     <div>
                         <div className="flex gap-2">
-                        <input type="checkbox" name="" id=""  />
-                        <p className=" text-blue-500 text-md">Keep me login</p>
+                            <input type="checkbox" name="" id="" />
+                            <p className=" text-blue-500 text-md">Keep me login</p>
                         </div>
                     </div>
                 </form>
@@ -84,9 +84,9 @@ function Login() {
                         <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="github" className="w-5 h-5" />
                         Continue with Github
                     </button>
-                    <div className="flex items-center justify-center cursor-pointer ">
-                        <h1>Don't have account ?</h1>
-                        <p className="text-blue-500">Register your account </p>
+                    <div className="flex justify-center text-sm mt-4">
+                        <span>Don't have account?</span>
+                        <span className="text-blue-500 ml-1 cursor-pointer hover:underline"> Register account </span>
                     </div>
                 </div>
 
