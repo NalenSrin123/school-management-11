@@ -5,10 +5,10 @@ function Footer() {
     <footer className="bg-gray-100 pt-14 pb-6 text-gray-700">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Main Flex */}
+       
         <div className="flex flex-col lg:flex-row justify-between gap-16">
 
-          {/* Left Side - ETEC */}
+          
           <div className="lg:w-1/3">
           <div className="flex">
             <img src="/ETEC.jpg" className="w-9 h-8" alt="" />  
@@ -32,10 +32,8 @@ function Footer() {
             </div>
           </div>
 
-          {/* Right Side - Group Content */}
           <div className="lg:w-2/3 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
 
-            {/* Useful Link */}
             <div>
               <h3 className="font-bold text-lg mb-4">Useful Link</h3>
               <ul className="space-y-2">
@@ -47,7 +45,7 @@ function Footer() {
               </ul>
             </div>
 
-            {/* Our Service */}
+           
             <div>
               <h3 className="font-bold text-lg mb-4">Our Service</h3>
               <ul className="space-y-2">
@@ -59,7 +57,7 @@ function Footer() {
               </ul>
             </div>
 
-            {/* Our Courses */}
+            
             <div>
               <h3 className="font-bold text-lg mb-4">Our Courses</h3>
               <ul className="space-y-2">
@@ -71,7 +69,6 @@ function Footer() {
               </ul>
             </div>
 
-            {/* Download App */}
             <div>
               <h3 className="font-bold text-lg mb-4">Download App</h3>
               <div className="space-y-3">
@@ -84,7 +81,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
+       
         <div className="border-t mt-12 pt-5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-center md:text-left">

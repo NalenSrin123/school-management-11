@@ -23,8 +23,6 @@ function App() {
     <BrowserRouter>
       <AppRoutes />
       <Register/>
-      <CoursesCard/>
-      <CourseDetail/>
       <ConfirmOTPpage/>
       <ResetPassword/>
       <Design_OTP_Page/>
