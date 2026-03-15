@@ -1,3 +1,4 @@
+import Features from "../../app/Features";
 import Footer from "../../app/Footer";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../layout/Navbar";
@@ -10,6 +11,7 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <CoursesCard/>
+      <Features/>
       <Footer/>
     </div>
   );
