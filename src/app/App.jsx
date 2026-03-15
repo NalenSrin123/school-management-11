@@ -1,12 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes";
-import Reset_password from "../public-site/pages/Reset_password";
+import ResetPassword from "../public-site/pages/ResetPassword";
 
 function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
-      <Reset_password />
+      <ResetPassword />
     </BrowserRouter>
   );
 }
