@@ -1,9 +1,3 @@
-function About() {
-  return <div>
-    About
-    </div>
-}
-
 export default function About() {
   const [show, setShow] = useState(false);
 
