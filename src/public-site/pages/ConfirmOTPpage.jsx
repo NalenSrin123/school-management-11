@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 const ConfirmOTPpage = () => {
   const [otp, setOtp] = useState(new Array(6).fill(""));
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(60);
   const [status, setStatus] = useState({ type: '', message: '' });
   const [loading, setLoading] = useState(false);
   const inputRefs = useRef([]);
@@ -18,7 +18,7 @@ const ConfirmOTPpage = () => {
     return () => clearInterval(interval);
   }, [timer]);
   const handleResend = () => {
-    setTimer(30);
+    setTimer(60);
     setOtp(new Array(6).fill(""));
     setStatus({ type: '', message: '' });
     inputRefs.current[0]?.focus();
@@ -40,7 +40,6 @@ const ConfirmOTPpage = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code: fullOtp }),
       });
-
       if (response.ok) {
         setStatus({ type: 'success', message: 'Your OTP is successful.' });
       } else {
@@ -109,7 +108,7 @@ const ConfirmOTPpage = () => {
           <h2 className="text-2xl font-bold text-slate-800 mb-2">Two-Step Verification</h2>
           <p className="text-slate-500 text-sm mb-8 leading-relaxed">
             Enter the 6-digit code sent to your institutional <br /> 
-            email <span className="font-semibold text-slate-700">example@etec.edu.br</span>
+            email <span className="font-semibold text-slate-700">example@up.edu.br</span>
           </p>
           <div className="flex justify-between gap-2 mb-8">
             {otp.map((data, index) => (
@@ -152,7 +151,7 @@ const ConfirmOTPpage = () => {
               00:{timer.toString().padStart(2, '0')}
             </span>
           </div>
-          <button className="flex text-red-400 mt-5 flex items-center justify-center w-full text-sm font-medium hover:text-red-500 transition-colors">
+          <button className="flex text-red-400 mt-5  items-center justify-center w-full text-sm font-medium hover:text-red-500 transition-colors">
             <div className="w-4 h-4 mr-1">
               <img src="https://cdn-icons-png.flaticon.com/512/14024/14024938.png " alt="" />
             </div>
