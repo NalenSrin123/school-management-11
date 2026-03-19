@@ -4,6 +4,7 @@ import AppRoutes from './routes'
 import About from '../public-site/pages/About'
 
 import Register from '../services/Register';
+import ConfirmOTPpage from '../public-site/pages/ConfirmOTPpage';
 import Design_OTP_Page from '../public-site/pages/Design_OTP_Page';
 import KruInternship from '../public-site/pages/Internship';
 import Position from '../public-site/pages/Position';
@@ -21,8 +22,17 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
- 
-      
+
+ <Register/>
+ <ConfirmOTPpage/>
+ <Design_OTP_Page/>
+ <KruInternship/>
+ <Position/>
+ <Login/>
+ <Footer/>
+ <HeroSection/>
+ <Reset_password/>
+      <Navbar/>
     </BrowserRouter>
    
   );
