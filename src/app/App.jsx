@@ -5,6 +5,7 @@ import About from '../public-site/pages/About'
 import MoblieMenuSetting from '../dashboard/layout/MoblieMenuSetting';
 
 import Register from '../services/Register';
+import ConfirmOTPpage from '../public-site/pages/ConfirmOTPpage';
 import Design_OTP_Page from '../public-site/pages/Design_OTP_Page';
 import KruInternship from '../public-site/pages/Internship';
 import Position from '../public-site/pages/Position';
@@ -14,6 +15,7 @@ import HeroSection from '../public-site/components/HeroSection';
 import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
+import Add_new_users from '../dashboard/pages/users/Add_new_users';
 
 
 
@@ -21,11 +23,9 @@ import CoursesCard from '../public-site/pages/CoursesCard';
 function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
- 
-      <MoblieMenuSetting/>
+      {/* <AppRoutes /> */}
+      <Add_new_users/>
     </BrowserRouter>
-   
   );
 }
 
