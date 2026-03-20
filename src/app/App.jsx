@@ -13,6 +13,7 @@ import HeroSection from '../public-site/components/HeroSection';
 import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
+import Add_new_users from '../dashboard/pages/users/Add_new_users';
 
 
 
@@ -20,9 +21,8 @@ import CoursesCard from '../public-site/pages/CoursesCard';
 function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
- 
-      
+      {/* <AppRoutes /> */}
+      <Add_new_users/>
     </BrowserRouter>
    
   );
