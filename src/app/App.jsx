@@ -25,7 +25,6 @@ function App() {
       {/* <AppRoutes /> */}
       <Add_new_users/>
     </BrowserRouter>
-   
   );
 }
 
