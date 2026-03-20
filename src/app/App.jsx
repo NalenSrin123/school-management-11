@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import AppRoutes from './routes'
 import About from '../public-site/pages/About'
+import MoblieMenuSetting from '../dashboard/layout/MoblieMenuSetting';
 
 import Register from '../services/Register';
 import Design_OTP_Page from '../public-site/pages/Design_OTP_Page';
@@ -22,7 +23,7 @@ function App() {
     <BrowserRouter>
       <AppRoutes />
  
-      
+      <MoblieMenuSetting/>
     </BrowserRouter>
    
   );
