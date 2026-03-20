@@ -13,7 +13,8 @@ import HeroSection from '../public-site/components/HeroSection';
 import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
-
+import Headbar from '../dashboard/components/design_sidebar/headbar';
+import Sidebar from '../dashboard/components/design_sidebar/sidebar';
 
 
 
@@ -21,7 +22,8 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
- 
+      <Headbar />
+      <Sidebar />
       
     </BrowserRouter>
    
