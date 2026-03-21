@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import AppRoutes from './routes'
 import About from '../public-site/pages/About'
-
+import StudentList from '../dashboard/pages/courses/StudentList'
 import Register from '../services/Register';
 import ConfirmOTPpage from '../public-site/pages/ConfirmOTPpage';
 import Design_OTP_Page from '../public-site/pages/Design_OTP_Page';
@@ -33,6 +33,7 @@ function App() {
  <HeroSection/>
  <Reset_password/>
       <Navbar/>
+      <StudentList/>
     </BrowserRouter>
    
   );
