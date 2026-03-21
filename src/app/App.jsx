@@ -13,7 +13,11 @@ import HeroSection from '../public-site/components/HeroSection';
 import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
-import Courses from '../public-site/pages/Course';
+import Courses from '../public-site/pages/CourseDetail';
+import { GrOverview } from 'react-icons/gr';
+import AdminDashboard from '../public-site/pages/overview';
+
+
 
 
 
@@ -22,8 +26,8 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
-    <Courses/>
-      <Register/>
+    {/* <Courses/> */}
+      {/* <Register/>
       <ConfirmOTPpage/>
       <ResetPassword/>
       <Design_OTP_Page/>
@@ -35,10 +39,10 @@ function App() {
   
       <Reset_password/>
     
-      <Navbar/>
-      
+      <Navbar/> */}
+      <AdminDashboard/>
     </BrowserRouter>
-   
+    
   );
 }
 
