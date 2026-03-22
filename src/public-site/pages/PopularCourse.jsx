@@ -66,7 +66,7 @@ const PopularCourse = () => {
         <h3 className='font-extrabold text-3xl text-red-500'>Most Popular Course This Month</h3>
         <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6 my-7'>
             {
-                courseData.map(item=>{
+                courseData.map(item=>{ 
                     return (
                         <div key={item.id} className='h-[380px] rounded-2xl overflow-hidden border-2 border-gray-300'>
                             <div className='w-full h-[176px]'>
