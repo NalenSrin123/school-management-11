@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { 
-  Home, Users, GraduationCap, Library, UserCircle, 
-  BookOpen, Calendar, CheckSquare, ClipboardList, 
+import { Link } from "react-router-dom";
+import {
+  Home, Users, GraduationCap, Library, UserCircle,
+  BookOpen, Calendar, CheckSquare, ClipboardList,
   BellRing, Truck, Building2, ChevronDown, ChevronRight, Pipette, NotebookPen, CarFront, Hotel,
 } from 'lucide-react';
 
@@ -20,7 +21,7 @@ const Sidebar = () => {
       <nav className="flex-1 px-4 space-y-1 overflow-y-auto">
         {/* Home Menu with Dropdown */}
         <div>
-          <button 
+          <button
             onClick={() => setIsHomeOpen(!isHomeOpen)}
             className={`w-full flex items-center justify-between p-3 rounded-xl transition-colors ${isHomeOpen ? 'text-purple-600 bg-purple-50' : 'text-gray-500 hover:bg-gray-50'}`}
           >
@@ -30,11 +31,13 @@ const Sidebar = () => {
             </div>
             {/* {isHomeOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />} */}
           </button>
-      
+
         </div>
 
         <NavItem icon={<GraduationCap size={20} />} label="Users" hasSub />
-        <NavItem icon={<BookOpen size={20} />} label="Courses" />
+        <Link to="/courses">
+          <NavItem icon={<BookOpen size={20} />} label="Courses" />
+        </Link>
         <NavItem icon={<Calendar size={20} />} label="Logo" />
         <NavItem icon={<NotebookPen size={20} />} label="Donate" />
         <NavItem icon={<CarFront size={20} />} label="Menu Config" />

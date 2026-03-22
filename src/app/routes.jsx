@@ -9,7 +9,7 @@ import CoursesCard from "../public-site/pages/CoursesCard";
 import Mainlayout from "../public-site/components/Mainlayout";
 import Login from "../services/Login";
 import Sidebar from "../dashboard/components/design_sidebar/Sidebar";
-
+import StudentList from "../dashboard/pages/courses/StudentList";
 function AppRoutes() {
   return (
     <Routes>
@@ -26,6 +26,7 @@ function AppRoutes() {
       </Route>
       <Route path="login" element={<Login/>}/>
       <Route path="dashboard" element={<Sidebar/>}/>
+       <Route path="/courses" element={<StudentList />} />
     </Routes>
   );
 }
