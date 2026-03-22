@@ -12,7 +12,8 @@ function Add_new_users() {
     email: "",
     phone: "",
     gender: "",
-    course: "",
+    password: "",
+    username: "",
   });
 
   const handlePhoto = (e) => {
@@ -30,16 +31,18 @@ function Add_new_users() {
     setTimeout(() => setShowAlert(false), 3000);
 
     //  clear all form fields
-    setForm({ firstName: "", lastName: "", email: "", phone: "", gender: "", course: "" });
+    setForm({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      gender: "",
+      username: "",
+      password: "",
+    });
     setPreview(null);
     setSelected(null);
   };
-
-  const ROLES = [
-    { name: "Viewer", desc: "Read-only access to all resources" },
-    { name: "Editor", desc: "Create and edit, cannot delete" },
-    { name: "Admin", desc: "Full access including settings" },
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -95,7 +98,7 @@ function Add_new_users() {
         </div>
 
         {/* Card */}
-        <div className="bg-white border border-gray-200 px-5 sm:px-6 py-5 sm:py-6 rounded-2xl shadow-sm w-full">
+        <div className="bg-white border border-gray-200 px-5 sm:px-6 py-5 sm:py-6 rounded-2xl  w-full">
           {/* Card header */}
           <div className="mb-5">
             <p className="text-base sm:text-lg font-bold text-gray-900">
@@ -112,7 +115,7 @@ function Add_new_users() {
               {preview ? (
                 <img
                   src={preview}
-                  alt="avatar"
+                  alt="picture"
                   className="w-full h-full object-cover m-1.5 "
                 />
               ) : (
@@ -140,7 +143,6 @@ function Add_new_users() {
 
           {/* Form fields */}
           <div className="flex flex-col gap-4">
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label className="text-sm font-medium text-gray-700">
@@ -202,7 +204,7 @@ function Add_new_users() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label className="text-sm font-medium text-gray-700">
-                  Gender
+                  Role
                 </label>
                 <select
                   name="gender"
@@ -210,72 +212,50 @@ function Add_new_users() {
                   onChange={handleChange}
                   className="border border-gray-300 rounded-lg py-2.5 px-4 text-sm w-full bg-white focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-100 transition text-gray-700"
                 >
-                  <option value="">Select Gender</option>
-                  <option>Male</option>
-                  <option>Female</option>
-                  <option>Other</option>
+                  <option value="">Select Role</option>
+                  <option>Admin</option>
+                  <option>User</option>
+                  <option>Editor</option>
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-sm font-medium text-gray-700">
-                  Course
+                  Username
                 </label>
-                <select
-                  name="course"
-                  value={form.course}
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="@username"
+                  value={form.username}
                   onChange={handleChange}
                   className="border border-gray-300 rounded-lg py-2.5 px-4 text-sm w-full bg-white focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-100 transition text-gray-700"
-                >
-                  <option value="">Select Course</option>
-                  <option>Software Engineering</option>
-                  <option>Web Development</option>
-                  <option>Mobile Development</option>
-                  <option>Database Administrator</option>
-                  <option>Graphic Design</option>
-                </select>
+                />
               </div>
             </div>
-          </div>
 
-          <div className="mt-8">
-            <div>
-              <h1 className="text-base font-bold">Role & Access</h1>
-              <p className="text-xs text-gray-400">
-                Select what this user can see and do
-              </p>
-            </div>
-
-            <div className="mt-4 flex flex-col sm:flex-row gap-4">
-              {ROLES.map(({ name, desc }) => (
-                <div
-                  key={name}
-                  onClick={() => setSelected(name)}
-                  className={`border rounded-lg px-3 py-2 cursor-pointer transition-all duration-200 flex-1
-              ${
-                selected === name
-                  ? "bg-green-100 border-green-500 text-green-700"
-                  : "border-gray-300 text-gray-800 hover:bg-green-50 hover:border-green-400 hover:text-green-600"
-              }`}
-                >
-                  <h1 className="font-bold">{name}</h1>
-                  <p
-                    className={`text-sm mt-0.5 ${selected === name ? "text-green-600" : "text-gray-400"}`}
-                  >
-                    {desc}
-                  </p>
-                </div>
-              ))}
+            <div className="flex flex-col gap-1.5">
+              <label className="text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <input
+                type="pass"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                placeholder="Password"
+                className="border border-gray-300 rounded-lg py-2.5 px-4 text-sm w-full bg-white focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-100 transition text-gray-700"
+              />
             </div>
           </div>
 
           {/* Action buttons */}
           <div className="mt-6 flex flex-col-reverse sm:flex-row sm:justify-end gap-2 sm:gap-3">
-            <button className="w-full sm:w-auto px-8 py-2.5 rounded-xl bg-red-400 text-white text-sm font-medium hover:bg-red-600 active:scale-95 transition-all">
+            <button className="w-full sm:w-auto px-8 py-2.5 rounded-xl border border-gray-400 hover:text-white text-sm font-medium hover:bg-red-600 active:scale-95 transition-all">
               Cancel
             </button>
             <button
               onClick={handleAddUser}
-              className="w-full sm:w-auto px-8 py-2.5 rounded-xl bg-green-400 text-white text-sm font-medium hover:bg-green-600 active:scale-95 transition-all"
+              className="w-full sm:w-auto px-8 py-2.5 rounded-xl bg-blue-400 border border-gray-300 text-white text-sm font-medium hover:bg-blue-600 active:scale-95 transition-all"
             >
               Add new user
             </button>

@@ -21,7 +21,7 @@ import Add_new_users from '../dashboard/pages/users/Add_new_users';
 function App() {
   return (
     <BrowserRouter>
-      {/* <AppRoutes /> */}
+      <AppRoutes />
       <Add_new_users/>
     </BrowserRouter>
    
