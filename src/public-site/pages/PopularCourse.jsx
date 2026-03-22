@@ -55,28 +55,15 @@ const courseData = [
     description: "Understand the fundamentals of protecting systems and networks.",
     rating: 4.4,
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b"
-  },
-  {
-    id: 9,
-    name: "Digital Marketing Mastery",
-    description: "Learn SEO, social media marketing, and online advertising.",
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec"
-  },
-  {
-    id: 10,
-    name: "Machine Learning Introduction",
-    description: "Explore machine learning algorithms and practical AI projects.",
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1526378722484-cc5c5100a3e1"
   }
+  
 ];
 
 
 const PopularCourse = () => {
   return (
-    <div className='max-w-7xl h-6 mx-auto'>
-        <h3 className='text-red-500 font-extrabold text-3xl'>Most Popular Course This Month</h3>
+    <div className='max-w-7xl h-auto p-6 lg:p-0 mx-auto'>
+        <h3 className='font-extrabold text-3xl text-red-500'>Most Popular Course This Month</h3>
         <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6 my-7'>
             {
                 courseData.map(item=>{
@@ -86,7 +73,7 @@ const PopularCourse = () => {
                                 <img src={item.image} alt="" className='w-full h-full' />
                             </div>
                             <div className='w-full h-[calc(100%-176px)] p-3'>
-                                <h4 className='text-2xl'>{item.name}</h4>
+                                <h4 className='text-2xl line-clamp-1'>{item.name}</h4>
                                 <p className='line-clamp-3 my-1'>{item.description}</p>
                                 <p>{item.rating}</p>
                                 <div className='flex justify-end border-0'>
