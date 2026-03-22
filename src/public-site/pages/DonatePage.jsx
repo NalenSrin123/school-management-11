@@ -38,7 +38,6 @@ const DonatePage = () => {
 
   return (
     <div className="w-full h-auto">
-      <Navbar />
 
       <div className="px-6 lg:px-16 w-full h-auto mt-40 mb-10">
         <div className="max-w-7xl mx-auto flex gap-6 flex-wrap justify-center">
