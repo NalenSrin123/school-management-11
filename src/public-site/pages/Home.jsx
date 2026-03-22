@@ -12,7 +12,6 @@ const Home = () => {
       <HeroSection />
       <CoursesCard/>
       <Features/>
-      <Footer/>
     </div>
   );
 };
