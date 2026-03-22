@@ -605,7 +605,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-6 left-0 w-full z-50 px-6 lg:px-16">
+      <nav className="sticky top-0 left-0 w-full z-50 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md rounded-full shadow-lg px-4 py-2 flex items-center justify-between border border-white/20">
           <div className="flex items-center gap-2 pl-2">
             <div className="p-1 w-15 h-15 flex items-center justify-center">

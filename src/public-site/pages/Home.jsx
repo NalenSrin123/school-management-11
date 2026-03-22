@@ -8,7 +8,6 @@ import CoursesCard from "./CoursesCard";
 const Home = () => {
   return (
     <div className="h-auto w-full overflow-hidden">
-      <Navbar />
       <HeroSection />
       <CoursesCard/>
       <Features/>
