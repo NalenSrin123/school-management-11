@@ -28,7 +28,7 @@ function Login() {
                     {/* Password */}
                     <div className=" flex justify-between items-center">
                         <p className=" text-md">Password</p>
-                        <p className=" text-md text-blue-500 hover:underline sm:text-sm">Forgot Password?</p>
+                        <p className=" text-md text-blue-500 hover:underline sm:text-sm">Forgot Password?</p>  
                     </div>
                     <div className="relative">
 
