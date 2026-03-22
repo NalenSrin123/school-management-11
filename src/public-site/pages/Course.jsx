@@ -16,7 +16,7 @@ function Courses() {
   return (
     <div className="bg-white min-h-screen w-full flex items-center justify-center p-4 overflow-hidden font-sans">
       <div className="relative border-[6px] border-purple-600 w-full max-w-[1500px] min-h-[10vh] p-6 md:p-14 bg-white shadow-2xl flex flex-col">
-        
+    
         {/* Header Section */}
         <div className="text-center mb-7 relative z-50">
           <div className="border-[4px] border-red-600 px-10 py-2 inline-block bg-white shadow-[6px_6px_0px_red]">
@@ -41,7 +41,6 @@ function Courses() {
               />
             </div>
           </div>
-
           
           <div className="w-full lg:pl-[380px] flex flex-col gap-4 z-10 relative">
             {courseItems.map((item, index) => (
