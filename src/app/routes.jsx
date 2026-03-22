@@ -18,12 +18,12 @@ function AppRoutes() {
         <Route path="/kruinternship" element={<KruInternship />} />
         <Route path="/donate" element={<DonatePage />} />
         {/* <Route path="/admin/login" element={<Login />} /> */}
-        <Route path="login" element={<Login/>}/>
         <Route path="/register" element={<Register />} />
         <Route path="/page/overview" element={<AdminDashboard />} />
         <Route path="/coursecard" element={<CoursesCard />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
+      <Route path="login" element={<Login/>}/>
     </Routes>
   );
 }
