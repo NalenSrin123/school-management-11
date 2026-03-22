@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useEffect } from "react";
 export default function About() {
   const [show, setShow] = useState(false);
 
