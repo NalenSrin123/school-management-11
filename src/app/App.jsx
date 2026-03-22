@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import AppRoutes from './routes'
 import About from '../public-site/pages/About'
+import MoblieMenuSetting from '../dashboard/layout/MoblieMenuSetting';
 
 import Register from '../services/Register';
 import ConfirmOTPpage from '../public-site/pages/ConfirmOTPpage';
@@ -15,8 +16,12 @@ import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
 
+
 import Headbar from '../dashboard/components/design_sidebar/headbar';
 import Sidebar from '../dashboard/components/design_sidebar/sidebar';
+
+import Add_new_users from '../dashboard/pages/users/Add_new_users';
+
 
 import Add_new_users from '../dashboard/pages/users/Add_new_users';
 
@@ -35,6 +40,8 @@ function App() {
 
       {/* <AppRoutes /> */}
       <Add_new_users/>
+      <AppRoutes />
+
 
     </BrowserRouter>
   );
