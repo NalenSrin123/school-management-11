@@ -62,8 +62,8 @@ const courseData = [
 
 const PopularCourse = () => {
   return (
-    <div className='max-w-7xl h-auto mx-auto'>
-        <h3 className='font-extrabold text-3xl'>Most Popular Course This Month</h3>
+    <div className='max-w-7xl h-auto p-6 lg:p-0 mx-auto'>
+        <h3 className='font-extrabold text-3xl text-red-500'>Most Popular Course This Month</h3>
         <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6 my-7'>
             {
                 courseData.map(item=>{
@@ -73,7 +73,7 @@ const PopularCourse = () => {
                                 <img src={item.image} alt="" className='w-full h-full' />
                             </div>
                             <div className='w-full h-[calc(100%-176px)] p-3'>
-                                <h4 className='text-2xl'>{item.name}</h4>
+                                <h4 className='text-2xl line-clamp-1'>{item.name}</h4>
                                 <p className='line-clamp-3 my-1'>{item.description}</p>
                                 <p>{item.rating}</p>
                                 <div className='flex justify-end border-0'>
