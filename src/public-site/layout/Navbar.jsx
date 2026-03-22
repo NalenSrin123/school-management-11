@@ -79,7 +79,7 @@ const ConfirmOTPpage = ({ onBack, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 px-4">
+    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/50 px-4">
       <div className="max-w-md w-full">
         <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 text-center relative">
 
@@ -186,7 +186,7 @@ function Login({ onClose, onLoginSuccess }) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 px-4">
+    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/50 px-4">
       <div className="bg-white w-full max-w-sm sm:max-w-md p-6 sm:p-8 rounded-2xl shadow-xl relative">
 
         <button
