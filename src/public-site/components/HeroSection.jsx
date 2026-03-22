@@ -31,7 +31,7 @@ const HeroSection = () => {
         <div className="w-full lg:w-1/2 flex justify-center">
           <div className="relative w-80 h-80 lg:w-[450px] lg:h-[450px] flex items-center justify-center">
             {/* <div className="absolute inset-0 bg-blue-400/30 rounded-full blur-[80px]" />
-            <div className="w-[280px] h-[280px] rounded-full bg-gradient-to-tr from-blue-300/40 to-indigo-900/60 shadow-2xl flex items-center justify-center border-4 border-white/20 backdrop-blur-sm">
+            <div className="w-[280px] h-[280px] rounded-full bg-gradient-to-tr from-blue-400/40 to-indigo-900/60 shadow-2xl flex items-center justify-center border-4 border-white/20 backdrop-blur-sm">
                <span className="text-[120px] drop-shadow-2xl opacity-90">🌐</span>
             </div> */}
           </div>
