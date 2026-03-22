@@ -60,7 +60,7 @@ const HeroSection = () => {
 
       
       <div className="absolute bottom-[5px] left-0 w-full px-6 lg:px-16 z-20">
-        <div className="max-w-8xl mx-auto bg-white rounded-[45px] py-10 px-8 lg:px-14 shadow-[0_25px_50px_rgba(0,0,0,0.2)] flex flex-wrap justify-between items-center gap-8">
+        <div className="max-w-7xl mx-auto bg-white rounded-[45px] py-10 px-8 lg:px-14 shadow-[0_25px_50px_rgba(0,0,0,0.2)] flex flex-wrap justify-between items-center gap-8">
            <StatItem icon="🏆" title="Awards Program" sub="Excellence In Tech" />
            <StatItem icon="💼" title="4.6k have jobs" sub="Most people are employed" />
            <StatItem icon="📊" title="10.5k subscribers" sub="Join our community now" />
