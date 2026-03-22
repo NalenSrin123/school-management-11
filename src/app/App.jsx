@@ -1,5 +1,5 @@
 
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
 import Create_logo from "../dashboard/layout/Create_logo";
 // import List_logo from "../dashboard/layout/List_logo";
 
@@ -24,7 +24,6 @@ import Add_new_users from '../dashboard/pages/users/Add_new_users';
 
 
 
->>>>>>> 0a18d6db9296782515650cb3090f3e1b440dbcd5
 
 function App() {
   return (
