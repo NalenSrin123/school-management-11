@@ -75,8 +75,8 @@ const courseData = [
 
 const PopularCourse = () => {
   return (
-    <div className='max-w-7xl h-6 mx-auto'>
-        <h3 className='text-red-500 font-extrabold text-3xl'>Most Popular Course This Month</h3>
+    <div className='max-w-7xl h-auto mx-auto'>
+        <h3 className='font-extrabold text-3xl'>Most Popular Course This Month</h3>
         <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6 my-7'>
             {
                 courseData.map(item=>{
