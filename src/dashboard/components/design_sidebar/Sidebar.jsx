@@ -18,7 +18,7 @@ const Sidebar = () => {
       </div>
 
       <nav className="flex-1 px-4 space-y-1 overflow-y-auto">
-        {/* Home Menu with Dropdown */}
+      
         <div>
           <button 
             onClick={() => setIsHomeOpen(!isHomeOpen)}

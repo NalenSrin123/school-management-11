@@ -4,7 +4,7 @@ import { Search, Bell, MessageSquare, ChevronDown } from 'lucide-react';
 const Headbar = () => {
   return (
     <header className="h-16 bg-white flex items-center justify-between px-8 sticky top-0 z-10 shadow-sm">
-      {/* Search Input with Icon */}
+
       <div className="relative w-96">
         <input 
           type="text" 
@@ -16,7 +16,7 @@ const Headbar = () => {
         </div>
       </div>
 
-      {/* User Actions */}
+     
       <div className="flex items-center gap-6">
         <div className="flex gap-4 text-gray-500">
           <div className="relative cursor-pointer">
