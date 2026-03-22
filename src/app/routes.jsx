@@ -5,6 +5,7 @@ import Register from '../services/Register'
 import About from '../public-site/pages/About'
 import KruInternship from '../public-site/pages/Internship'
 import DonatePage from '../public-site/pages/DonatePage'
+import AdminDashboard from '../public-site/pages/overview'
 import CoursesCard from '../public-site/pages/CoursesCard'
 
 function AppRoutes() {
@@ -15,9 +16,10 @@ function AppRoutes() {
       <Route path='/kruinternship' element={<KruInternship/>}/>
       <Route path='/donate' element={<DonatePage/>}/>
       <Route path='/admin/login' element={<Login />} />
+      <Route path='/register' element={<Register/>} />
+      <Route path='/page/overview' element={<AdminDashboard/>} />
       <Route path='/coursecard' element={<CoursesCard />}/>
       <Route path='*' element={<Navigate to='/' replace />} />
-      <Route path='/register' element={<Register/>}></Route>
     </Routes>
   )
 }
