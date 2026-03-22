@@ -21,6 +21,8 @@ import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
 import Add_new_users from '../dashboard/pages/users/Add_new_users';
+import List_logo from '../dashboard/layout/List_logo';
+import ListEvent from '../dashboard/pages/event/Listevent';
 
 
 
@@ -28,9 +30,7 @@ import Add_new_users from '../dashboard/pages/users/Add_new_users';
 function App() {
   return (
     <BrowserRouter>
-      {/* <List_logo /> */}
-      <Create_logo/>
-      
+      <AppRoutes />
     </BrowserRouter>
   );
 }
