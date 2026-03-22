@@ -5,6 +5,7 @@ import Register from '../services/Register'
 import About from '../public-site/pages/About'
 import KruInternship from '../public-site/pages/Internship'
 import DonatePage from '../public-site/pages/DonatePage'
+import AddCourseForm from '../dashboard/pages/courses/AddcourseForm'
 
 function AppRoutes() {
   return (

@@ -13,7 +13,6 @@ const BTN = {
 };
 const inputCls = (err) =>
   `w-full px-4 py-2.5 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-violet-100 focus:border-violet-400 transition-all ${err ? "border-red-300 bg-red-50" : "border-gray-200 bg-white hover:border-violet-300"}`;
-
 export default function AddCourseForm({ onCancel }) {
   const [form, setForm] = useState({ name: "", subject: "", description: "", status: "active" });
   const [image, setImage] = useState(null);
@@ -39,7 +38,6 @@ export default function AddCourseForm({ onCancel }) {
     setForm({ name: "", subject: "", description: "", status: "active" });
     setImage(null); setErrors({});
   };
-
   return (
     <div className="min-h-screen flex   justify-center bg-linear-to-br from-slate-50 via-white to-violet-50 p-4">
       {toast && (
@@ -50,7 +48,6 @@ export default function AddCourseForm({ onCancel }) {
           Course published!
         </div>
       )}
-
       <div className="w-full max-w-2xl p-6 ">
         <p className="text-xs text-gray-400 mb-1">
           <span className="hover:text-violet-500 cursor-pointer transition-colors" onClick={onCancel}>Courses</span>
@@ -74,7 +71,6 @@ export default function AddCourseForm({ onCancel }) {
             </div>
             {errors.name && <p className="text-xs text-red-400 mt-1">{errors.name}</p>}
           </div>
-
           <div>
             <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">
               Subject <span className="text-red-400">*</span>
@@ -90,7 +86,6 @@ export default function AddCourseForm({ onCancel }) {
             </div>
             {errors.subject && <p className="text-xs text-red-400 mt-1">{errors.subject}</p>}
           </div>
-
           <div>
             <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Description</label>
             <div className="rounded-xl border border-gray-200 bg-white hover:border-violet-300 focus-within:border-violet-400 focus-within:shadow-lg focus-within:shadow-violet-100 transition-all duration-200">
@@ -101,7 +96,6 @@ export default function AddCourseForm({ onCancel }) {
               </div>
             </div>
           </div>
-
           <div>
             <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1.5">Subject image</label>
             <div
@@ -136,12 +130,11 @@ export default function AddCourseForm({ onCancel }) {
             </div>
             <input ref={ref} type="file" accept="image/*" onChange={(e) => applyFile(e.target.files[0])} className="hidden" />
           </div>
-
           <div>
             <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">Status</label>
             <div className="flex flex-wrap gap-2">
               {[
-                { value: "active",   label: "Active",   bg: "bg-green-50 border-green-200", text: "text-green-700", dot: "bg-green-500" },
+                { value: "active",   label:   "Active",   bg: "bg-green-50 border-green-200", text: "text-green-700", dot: "bg-green-500" },
                 { value: "draft",    label: "Draft",    bg: "bg-amber-50 border-amber-200", text: "text-amber-700", dot: "bg-amber-500" },
                 { value: "archived", label: "Archived", bg: "bg-gray-50 border-gray-200",   text: "text-gray-500",  dot: "bg-gray-400" },
               ].map(({ value, label, bg, text, dot }) => (
@@ -153,7 +146,6 @@ export default function AddCourseForm({ onCancel }) {
               ))}
             </div>
           </div>
-
           <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-gray-100">
             <button onClick={handleSave} className={BTN.save}>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/></svg>
