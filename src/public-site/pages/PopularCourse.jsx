@@ -62,7 +62,7 @@ const courseData = [
 
 const PopularCourse = () => {
   return (
-    <div className='max-w-7xl h-auto p-6 lg:p-0 mx-auto'>
+    <div className='max-w-7xl h-auto p-6 lg:p-16 xl:p-0 mx-auto'>
         <h3 className='font-extrabold text-3xl text-red-500'>Most Popular Course This Month</h3>
         <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6 my-7'>
             {
