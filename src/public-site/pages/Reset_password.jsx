@@ -2,6 +2,8 @@ import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdError } from "react-icons/md";
 
+
+
 function Reset_password() {
   return (
     <div className="flex justify-center items-start min-h-screen bg-gray-100 p-4">

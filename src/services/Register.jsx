@@ -6,6 +6,7 @@ import background_regsiter from '../assets/images/background_regsiter.webp'
 import logo_etec from '../assets/images/logo_etec.png'
 import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
+import { Link } from "react-router-dom";
   const Register = () => {
     const [password,setPassword]=useState("")
   const [error,setError]=useState("")
@@ -71,17 +72,17 @@ import { RiLockPasswordFill } from 'react-icons/ri';
               <h4 className='text-2xl font-bold'>Create an Account</h4>
               <div className='text-xs flex items-center mt-2 gap-2'>
                 <span>Already have account?</span>
-                <a href="#" className='text-blue-500 underline'>Login</a>
+                <Link to="/login" className="text-blue-500 underline text-[15px]">Login</Link>
               </div>
-              <div className='mt-5 flex justify-between gap-5'>
-                <a className='px-10 py-1 rounded-md flex justify-center items-center gap-2 border-gray-300 border-2' href="#">
+              <div className='mt-5 flex justify-center gap-5'>
+                <a className='px-10 py-1 rounded-md flex j items-center  gap-2 border-gray-300 border-2' href="#">
                   <img src={google_logo} alt="google_log" className='w-5 h-5 rounded-full' />
                   <span>Google</span>
                 </a>
-                <a className='px-10 py-1 rounded-md flex justify-center items-center border-gray-300 gap-2 border-2' href="#">
+                {/* <a className='px-10 py-1 rounded-md flex justify-center items-center border-gray-300 gap-2 border-2' href="#">
                   <img src={microsoft_logo} alt="microsotf_logo" className='w-4 h-4' />
                   <span>Microsoft</span>
-                </a>
+                </a> */}
               </div>
               <div className='my-6 flex items-center gap-2'>
                   <div className=" border grow border-gray-300"></div>

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { MdOutlineMail } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate(); 
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8">
@@ -28,7 +32,7 @@ function Login() {
                     {/* Password */}
                     <div className=" flex justify-between items-center">
                         <p className=" text-md">Password</p>
-                        <p className=" text-md text-blue-500 hover:underline sm:text-sm">Forgot Password?</p>  
+                       <button type="button" onClick={() => navigate("/Reset-password")} className="text-md text-blue-500 hover:underline sm:text-sm">Forgot Password?</button>
                     </div>
                     <div className="relative">
 
@@ -74,19 +78,9 @@ function Login() {
                         <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="google" className="w-5 h-5" />
                         Continue with Google
                     </button>
-
-                    <button className="w-full h-11 sm:h-12 flex items-center justify-center gap-2 bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 transition">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="facebook" className="w-5 h-5" />
-                        Continue with Facebook
-                    </button>
-
-                    <button className="w-full h-11 sm:h-12 flex items-center justify-center gap-2 bg-black text-white rounded-xl shadow-md hover:bg-gray-800 transition">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="github" className="w-5 h-5" />
-                        Continue with Github
-                    </button>
                     <div className="flex justify-center text-sm mt-4">
                         <span>Don't have account?</span>
-                        <span className="text-blue-500 ml-1 cursor-pointer hover:underline"> Register account </span>
+                       <Link to="/register" className="text-blue-500 ml-1 cursor-pointer hover:underline">  Register account</Link>
                     </div>
                 </div>
 

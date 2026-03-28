@@ -9,6 +9,7 @@ import CoursesCard from "../public-site/pages/CoursesCard";
 import Mainlayout from "../public-site/components/Mainlayout";
 import Login from "../services/Login";
 import Sidebar from "../dashboard/components/design_sidebar/Sidebar";
+import Reset_password from "../public-site/pages/Reset_password";
 
 function AppRoutes() {
   return (
@@ -24,8 +25,11 @@ function AppRoutes() {
         <Route path="/coursecard" element={<CoursesCard />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
-      <Route path="login" element={<Login/>}/>
+      <Route element={<Mainlayout />}></Route>
       <Route path="dashboard" element={<Sidebar/>}/>
+      <Route path="/login" element={<Login />} />
+      <Route path="/reset-password" element={<Reset_password />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
