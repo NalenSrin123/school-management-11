@@ -8,7 +8,7 @@ import AdminDashboard from "../public-site/pages/overview";
 import CoursesCard from "../public-site/pages/CoursesCard";
 import Mainlayout from "../public-site/components/Mainlayout";
 import Login from "../services/Login";
-
+import FormListLogo from "../public-site/components/FormListLogo";
 function AppRoutes() {
   return (
     <Routes>
@@ -24,6 +24,7 @@ function AppRoutes() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
       <Route path="login" element={<Login/>}/>
+      <Route path="/form" element={<FormListLogo/>}/>
     </Routes>
   );
 }

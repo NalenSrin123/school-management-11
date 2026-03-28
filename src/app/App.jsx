@@ -16,6 +16,8 @@ import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
 import Add_new_users from '../dashboard/pages/users/Add_new_users';
+import List_Logo from '../dashboard/layout/List_logo'
+import FormListLogo from '../public-site/components/FormListLogo';
 
 
 
@@ -24,7 +26,8 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
-
+      <List_Logo/>
+      
     </BrowserRouter>
   );
 }
