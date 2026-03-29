@@ -10,6 +10,7 @@ import Mainlayout from "../public-site/components/Mainlayout";
 import Login from "../services/Login";
 import Sidebar from "../dashboard/components/design_sidebar/Sidebar";
 
+import FormListLogo from "../public-site/components/FormListLogo";
 function AppRoutes() {
   return (
     <Routes>
@@ -26,6 +27,7 @@ function AppRoutes() {
       </Route>
       <Route path="login" element={<Login/>}/>
       <Route path="dashboard" element={<Sidebar/>}/>
+      <Route path="/form" element={<FormListLogo/>}/>
     </Routes>
   );
 }
