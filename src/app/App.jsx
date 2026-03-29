@@ -1,3 +1,8 @@
+
+// import { BrowserRouter } from "react-router-dom";
+import Create_logo from "../dashboard/layout/Create_logo";
+// import List_logo from "../dashboard/layout/List_logo";
+
 import { BrowserRouter } from 'react-router-dom'
 
 import AppRoutes from './routes'
@@ -16,8 +21,11 @@ import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
 import Add_new_users from '../dashboard/pages/users/Add_new_users';
+
 import List_logo from '../dashboard/layout/List_logo';
 import ListEvent from '../dashboard/pages/event/Listevent';
+import FormListLogo from '../public-site/components/FormListLogo';
+
 
 
 
