@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const data = [
   { id: "LG-001", image: "", label: "Etec Logo", date: "2024-01-12" },
   { id: "LG-002", image: "", label: "Etec Logo", date: "2024-02-08" },
@@ -32,9 +33,11 @@ export default function List_logo() {
                 {data.length} Assets
               </span>
 
-              <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition">
-                + Add Logo
-              </button>
+              <Link to="/dashboard/create-logo">
+  <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition">
+    + Add Logo
+  </button>
+</Link>
             </div>
           </div>
         </div>

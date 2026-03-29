@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import { 
   Home, Users, GraduationCap, Library, UserCircle, 
   BookOpen, Calendar, CheckSquare, ClipboardList, 
@@ -35,7 +36,9 @@ const Sidebar = () => {
 
         <NavItem icon={<GraduationCap size={20} />} label="Users" hasSub />
         <NavItem icon={<BookOpen size={20} />} label="Courses" />
-        <NavItem icon={<Calendar size={20} />} label="Logo" />
+        <Link to="/dashboard/list-logo">
+  <NavItem icon={<Calendar size={20} />} label="Logo" />
+</Link>
         <NavItem icon={<NotebookPen size={20} />} label="Donate" />
         <NavItem icon={<CarFront size={20} />} label="Menu Config" />
         <NavItem icon={<UserCircle size={20} />} label="Account" hasSub />

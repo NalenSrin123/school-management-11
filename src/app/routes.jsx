@@ -9,7 +9,9 @@ import CoursesCard from "../public-site/pages/CoursesCard";
 import Mainlayout from "../public-site/components/Mainlayout";
 import Login from "../services/Login";
 import Sidebar from "../dashboard/components/design_sidebar/Sidebar";
-
+import Dashboard_Layout from "../dashboard/layout/Dashboard_Layout";
+import List_logo from '../dashboard/layout/List_logo';
+import Create_logo from "../dashboard/layout/Create_logo";
 function AppRoutes() {
   return (
     <Routes>
@@ -26,6 +28,10 @@ function AppRoutes() {
       </Route>
       <Route path="login" element={<Login/>}/>
       <Route path="dashboard" element={<Sidebar/>}/>
+       <Route path="/dashboard" element={<Dashboard_Layout />}>
+  <Route path="list-logo" element={<List_logo />} />
+  <Route path="create-logo" element={<Create_logo />} />
+</Route>
     </Routes>
   );
 }
