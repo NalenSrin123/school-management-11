@@ -9,6 +9,8 @@ import CoursesCard from "../public-site/pages/CoursesCard";
 import Mainlayout from "../public-site/components/Mainlayout";
 import Login from "../services/Login";
 import Sidebar from "../dashboard/components/design_sidebar/Sidebar";
+import Table from "../public-site/pages/User_table_list";
+import Add_new_users from "../dashboard/pages/users/Add_new_users";
 
 function AppRoutes() {
   return (
@@ -24,8 +26,11 @@ function AppRoutes() {
         <Route path="/coursecard" element={<CoursesCard />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
-      <Route path="login" element={<Login/>}/>
-      <Route path="dashboard" element={<Sidebar/>}/>
+      <Route path="login" element={<Login />} />
+      <Route path="dashboard" element={<Sidebar />}>
+        <Route path="table" element={<Table />} />
+        <Route path="add_new_users" element={<Add_new_users />} />
+      </Route>
     </Routes>
   );
 }
