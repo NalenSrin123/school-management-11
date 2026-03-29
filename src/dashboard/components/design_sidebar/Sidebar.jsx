@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import {Link} from "react-router-dom";
 import { 
   Home, Users, GraduationCap, Library, UserCircle, 
   BookOpen, Calendar, CheckSquare, ClipboardList, 
   BellRing, Truck, Building2, ChevronDown, ChevronRight, Pipette, NotebookPen, CarFront, Hotel,
 } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [isHomeOpen, setIsHomeOpen] = useState(true);
@@ -37,15 +39,19 @@ const Sidebar = () => {
         <NavItem icon={<BookOpen size={20} />} label="Courses" />
         <NavItem icon={<Calendar size={20} />} label="Logo" />
         <NavItem icon={<NotebookPen size={20} />} label="Donate" />
-        <NavItem icon={<CarFront size={20} />} label="Menu Config" />
+        
+        <NavItem icon={<CarFront size={20} />} label="Menu Config" hasSub to="/menu-config"/>
+        
         <NavItem icon={<UserCircle size={20} />} label="Account" hasSub />
       </nav>
     </aside>
   );
 };
 
-const NavItem = ({ icon, label, hasSub = false }) => (
-  <button className="w-full flex items-center justify-between p-3 text-gray-500 hover:bg-purple-50 hover:text-purple-600 rounded-xl transition-all">
+const NavItem = ({ icon, label, hasSub = false, to = '' }) => {
+  const navigate = useNavigate();
+  return (
+  <button onClick={() => navigate(to)} className="w-full flex items-center justify-between p-3 text-gray-500 hover:bg-purple-50 hover:text-purple-600 rounded-xl transition-all">
     <div className="flex items-center gap-3">
       {icon}
       <span className="font-medium text-sm">{label}</span>
@@ -53,5 +59,6 @@ const NavItem = ({ icon, label, hasSub = false }) => (
     {/* {hasSub && <ChevronDown size={16} />} */}
   </button>
 );
+}
 
 export default Sidebar;
