@@ -1,9 +1,9 @@
 import React from 'react'
 
-function reset_password() {
+function _password() {
   return (
-    <div>reset_password</div>
+    <div>_password</div>
   )
 }
 
-export default reset_password
+export default _password
