@@ -582,7 +582,7 @@ function Register({ onClose, onRegisterSuccess, onForgotPassword }) {
             />
             Continue with Github
           </button>
-
+          
           <div className="flex items-center justify-center gap-1 pt-1">
             <span className="text-gray-500 text-sm">
               Already have an account?

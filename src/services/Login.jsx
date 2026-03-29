@@ -2,6 +2,11 @@ import { data } from "autoprefixer";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { MdOutlineMail } from "react-icons/md";
+import { Link } from "react-router-dom";
+
+
+
 
 function Login() {
     const [keepMeLoggedIn, setKeepMeLoggedIn] = useState(false);
@@ -50,6 +55,7 @@ function Login() {
         }
     };
 
+    
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8">
@@ -77,7 +83,7 @@ function Login() {
                     {/* Password */}
                     <div className=" flex justify-between items-center" >
                         <p className=" text-md">Password</p>
-                        <p className=" text-md text-blue-500 hover:underline sm:text-sm cursor-pointer">Forgot Password?</p>  
+                       <button type="button" onClick={() => navigate("/verify-otp")} className="text-md text-blue-500 hover:underline sm:text-sm">Forgot Password?</button>
                     </div>
                     <div className="relative">
 
@@ -142,7 +148,7 @@ function Login() {
                     </button>
                     <div className="flex justify-center text-sm mt-4">
                         <span>Don't have account?</span>
-                        <span className="text-blue-500 ml-1 cursor-pointer hover:underline"> Register account </span>
+                       <Link to="/register" className="text-blue-500 ml-1 cursor-pointer hover:underline">  Register account</Link>
                     </div>
                 </div>
 
