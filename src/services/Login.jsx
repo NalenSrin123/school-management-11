@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
+
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate(); 
+    
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8">
@@ -32,7 +34,7 @@ function Login() {
                     {/* Password */}
                     <div className=" flex justify-between items-center">
                         <p className=" text-md">Password</p>
-                       <button type="button" onClick={() => navigate("/Reset-password")} className="text-md text-blue-500 hover:underline sm:text-sm">Forgot Password?</button>
+                       <button type="button" onClick={() => navigate("/verify-otp")} className="text-md text-blue-500 hover:underline sm:text-sm">Forgot Password?</button>
                     </div>
                     <div className="relative">
 
