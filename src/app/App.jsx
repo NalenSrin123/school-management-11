@@ -26,6 +26,7 @@ import List_logo from '../dashboard/layout/List_logo';
 import ListEvent from '../dashboard/pages/event/Listevent';
 import FormListLogo from '../public-site/components/FormListLogo';
 
+import Table from '../public-site/pages/User_table_list';
 
 
 
