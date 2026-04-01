@@ -16,17 +16,11 @@ import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
 
-
 import Headbar from '../dashboard/components/design_sidebar/headbar';
-import Sidebar from '../dashboard/components/design_sidebar/sidebar';
-
 import Add_new_users from '../dashboard/pages/users/Add_new_users';
 
-
-import Add_new_users from '../dashboard/pages/users/Add_new_users';
-
-
-
+import ListEvent from '../dashboard/pages/event/Listevent';
+import list_logo from '../dashboard/components/crud-logo/List_logo';
 
 
 function App() {
@@ -34,15 +28,17 @@ function App() {
     <BrowserRouter>
 
       <AppRoutes />
-      <Headbar />
-      <Sidebar />
+
+      {/* <Headbar /> */}
+      {/* <Sidebar /> */}
+
+      <list-logo />
       
 
       {/* <AppRoutes /> */}
       <Add_new_users/>
       <AppRoutes />
-
-
+      <ListEvent/>
     </BrowserRouter>
   );
 }
