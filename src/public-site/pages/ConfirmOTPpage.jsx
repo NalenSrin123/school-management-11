@@ -1,10 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+
+
 const ConfirmOTPpage = () => {
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const [timer, setTimer] = useState(60);
   const [status, setStatus] = useState({ type: '', message: '' });
   const [loading, setLoading] = useState(false);
   const inputRefs = useRef([]);
+  const navigate = useNavigate();
   useEffect(() => {
     inputRefs.current[0]?.focus();
   }, []);
@@ -157,7 +161,8 @@ const ConfirmOTPpage = () => {
             <div className="w-4 h-4 mr-1">
               <img src="https://cdn-icons-png.flaticon.com/512/14024/14024938.png" alt="" />
             </div>
-            Back To Login
+           <button onClick={() => navigate("/login")}>
+  Back To Login</button>
           </button> 
 
         </div>

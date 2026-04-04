@@ -2,6 +2,8 @@ import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdError } from "react-icons/md";
 
+
+
 function Reset_password() {
   return (
     <div className="flex justify-center items-start min-h-screen bg-gray-100 p-4">
@@ -40,7 +42,7 @@ function Reset_password() {
 
           {/* Button */}
           <div className="flex justify-center w-full mt-6">
-            <button className="flex justify-center items-center gap-2 bg-blue-700 text-white rounded-md py-2.5 px-8 text-sm font-bold hover:shadow-blue-400 hover:shadow-md hover:scale-105 transform transition w-full sm:w-auto">
+            <button  className="flex justify-center items-center gap-2 bg-blue-700 text-white rounded-md py-2.5 px-8 text-sm font-bold hover:shadow-blue-400 hover:shadow-md hover:scale-105 transform transition w-full sm:w-auto">
               Reset Password <FaArrowRightLong />
             </button>
           </div>

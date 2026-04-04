@@ -87,7 +87,7 @@ const ConfirmOTPpage = ({ onBack, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 px-4">
+    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/50 px-4">
       <div className="max-w-md w-full">
         <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 text-center relative">
           <button
@@ -251,7 +251,7 @@ const ForgotPasswordPage = ({ onBack, onClose, onSubmit }) => {
   const [active, setActive] = useState("Home");
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 px-4">
+    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/50 px-4">
       <div className="max-w-md w-full">
         <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 text-center relative">
           <button
@@ -418,13 +418,9 @@ function Register({ onClose, onRegisterSuccess, onForgotPassword }) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 px-4">
-      {/* គ្មាន max-h និង overflow-y-auto */}
-      <div className="bg-white w-full max-w-sm sm:max-w-md p-5 sm:p-6 rounded-2xl shadow-xl relative">
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold transition">
-          &times;
-        </button>
+      <div className="bg-white w-full max-w-sm sm:max-w-md p-6 sm:p-8 rounded-2xl shadow-xl relative">
+
+        <button onClick={onClose} className="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold transition">&times;</button>
 
         {/* Header តូចជាងមុន */}
         <div className="flex flex-col items-center mb-4">
@@ -537,10 +533,11 @@ function Register({ onClose, onRegisterSuccess, onForgotPassword }) {
 
           {/* Register Button */}
           <button
-            onClick={handleRegister}
-            disabled={loading}
-            className="w-full h-10 bg-blue-600 text-white rounded-xl text-sm font-semibold hover:bg-blue-700 disabled:bg-blue-400 transition">
-            {loading ? "Creating Account..." : "Register"}
+            onClick={onLoginSuccess}
+            className="w-full h-11 sm:h-12 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition"
+          >
+            
+            Login
           </button>
 
           <div className="flex gap-2 items-center">
@@ -585,7 +582,7 @@ function Register({ onClose, onRegisterSuccess, onForgotPassword }) {
             />
             Continue with Github
           </button>
-
+          
           <div className="flex items-center justify-center gap-1 pt-1">
             <span className="text-gray-500 text-sm">
               Already have an account?
@@ -622,38 +619,19 @@ const Navbar = () => {
           </div>
 
           <ul className="hidden lg:flex items-center gap-6 text-[11px] font-bold uppercase tracking-widest">
-            <Link to="/">
-              <li className="text-[#FF9800] cursor-pointer hover:opacity-80 transition">
-                Home
-              </li>
-            </Link>
-            <Link to="/about">
-              <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">
-                About Us
-              </li>
-            </Link>
-            <Link to="/kruinternship">
-              <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">
-                Internship
-              </li>
-            </Link>
-            <Link to="/donate">
-              <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">
-                Donate
-              </li>
-            </Link>
-            <Link to="/coursecard">
-              <li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition flex items-center gap-1">
-                Our Courses <span className="text-[10px]">▼</span>
-              </li>
-            </Link>
-            <Link to='/login'>
-              <li
-                onClick={() => setModal("login")}
-                className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition normal-case">
-                Login
-              </li>
-            </Link>
+            <Link to='/page/overview'><li className="text-[#FF9800] cursor-pointer hover:opacity-80 transition">Overview</li></Link>
+            <Link to='/about'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">About Us</li></Link>
+            <Link to='/kruinternship'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Internship</li></Link>
+            <Link to='/donate'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Donate</li></Link>
+            <Link to='/coursecard'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition flex items-center gap-1">
+              Our Courses <span className="text-[10px]">▼</span>
+            </li></Link>
+            <li
+              onClick={() => setModal("login")}
+              className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition normal-case"
+            >
+              Login
+            </li>
           </ul>
 
           <button className="bg-[#2979FF] hover:bg-blue-600 text-white px-8 py-2.5 rounded-full text-[12px] font-bold shadow-md transition-all active:scale-95">
