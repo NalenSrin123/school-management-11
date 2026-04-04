@@ -17,6 +17,9 @@ import ConfirmOTPpage from "../public-site/pages/ConfirmOTPpage";
 
 
 import FormListLogo from "../public-site/components/FormListLogo";
+import EditBanner from "../dashboard/components/forms/EditBanner";
+import EditBannerPage from "../dashboard/components/forms/EditBannerPage ";
+import BannerForm from "../dashboard/components/forms/BannerForm";
 function AppRoutes() {
   return (
     <Routes>
@@ -28,6 +31,10 @@ function AppRoutes() {
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/page/overview" element={<AdminDashboard />} />
         <Route path="/coursecard" element={<CoursesCard />} />
+        <Route path="/edit-banner/:id" element={<EditBannerPage/>} />
+        <Route path="/createBanner" element={<BannerForm/>} />
+        <Route path="/edit-banner/:id" element={<EditBanner/>} />
+
       </Route>
       <Route path="login" element={<Login />} />
       <Route path="dashboard" element={<Sidebar />}>
