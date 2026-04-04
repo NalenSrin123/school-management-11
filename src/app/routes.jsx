@@ -9,8 +9,13 @@ import CoursesCard from "../public-site/pages/CoursesCard";
 import Mainlayout from "../public-site/components/Mainlayout";
 import Login from "../services/Login";
 import Sidebar from "../dashboard/components/design_sidebar/Sidebar";
+
 import Mobliemenusetting from "../dashboard/layout/Mobliemenusetting";
 
+import Table from "../public-site/pages/User_table_list";
+import Add_new_users from "../dashboard/pages/users/Add_new_users";
+
+import FormListLogo from "../public-site/components/FormListLogo";
 function AppRoutes() {
   return (
     <Routes>
@@ -28,6 +33,12 @@ function AppRoutes() {
       <Route path="login" element={<Login/>}/>
       <Route path="dashboard" element={<Sidebar/>}/>
       <Route path="/menu-config" element={<Mobliemenusetting/>}/>
+      <Route path="login" element={<Login />} />
+      <Route path="dashboard" element={<Sidebar />}>
+        <Route path="table" element={<Table />} />
+        <Route path="add_new_users" element={<Add_new_users />} />
+      </Route>
+
     </Routes>
   );
 }

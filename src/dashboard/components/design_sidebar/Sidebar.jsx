@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { 
   Home, Users, GraduationCap, Library, UserCircle, 
   BookOpen, Calendar, CheckSquare, ClipboardList, 
@@ -11,6 +12,7 @@ const Sidebar = () => {
   const [isHomeOpen, setIsHomeOpen] = useState(true);
 
   return (
+    <>
     <aside className="w-64 bg-white shadow-sm flex flex-col h-screen sticky top-0">
       <div className="p-6 flex items-center gap-2">
         <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
@@ -45,6 +47,10 @@ const Sidebar = () => {
         <NavItem icon={<UserCircle size={20} />} label="Account" hasSub />
       </nav>
     </aside>
+    <main>
+      <Outlet/>
+    </main>
+    </>
   );
 };
 

@@ -537,10 +537,11 @@ function Register({ onClose, onRegisterSuccess, onForgotPassword }) {
 
           {/* Register Button */}
           <button
-            onClick={handleRegister}
-            disabled={loading}
-            className="w-full h-10 bg-blue-600 text-white rounded-xl text-sm font-semibold hover:bg-blue-700 disabled:bg-blue-400 transition">
-            {loading ? "Creating Account..." : "Register"}
+            onClick={onLoginSuccess}
+            className="w-full h-11 sm:h-12 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition"
+          >
+            
+            Login
           </button>
 
           <div className="flex gap-2 items-center">

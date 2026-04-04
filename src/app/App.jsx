@@ -1,3 +1,8 @@
+
+// import { BrowserRouter } from "react-router-dom";
+import Create_logo from "../dashboard/layout/Create_logo";
+// import List_logo from "../dashboard/layout/List_logo";
+
 import { BrowserRouter } from 'react-router-dom'
 
 import AppRoutes from './routes'
@@ -17,6 +22,12 @@ import CoursesCard from '../public-site/pages/CoursesCard';
 import Add_new_users from '../dashboard/pages/users/Add_new_users';
 import MoblieMenuSetting from '../dashboard/layout/Mobliemenusetting';
 import List_logo from '../dashboard/layout/List_logo';
+import ListEvent from '../dashboard/pages/event/Listevent';
+import FormListLogo from '../public-site/components/FormListLogo';
+import Fetch_logo from '../dashboard/components/Crud-logo/fetch_logo';
+
+import Table from '../public-site/pages/User_table_list';
+
 
 
 
@@ -26,7 +37,8 @@ function App() {
     <BrowserRouter>
       <AppRoutes />
       {/* <List_logo/> */}
-    {/* <MoblieMenuSetting/> */}
+      {/* <MoblieMenuSetting/> */}
+      <Fetch_logo/>
     </BrowserRouter>
   );
 }
