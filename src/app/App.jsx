@@ -20,19 +20,8 @@ import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
 import Headbar from '../dashboard/components/design_sidebar/headbar';
 import Add_new_users from '../dashboard/pages/users/Add_new_users';
-<<<<<<< HEAD
 import ListEvent from '../dashboard/pages/event/Listevent';
 import ListLogo from '../dashboard/components/crud-logo/ListLogo';
-=======
-
-import List_logo from '../dashboard/layout/List_logo';
-import ListEvent from '../dashboard/pages/event/Listevent';
-import FormListLogo from '../public-site/components/FormListLogo';
-
-import Table from '../public-site/pages/User_table_list';
-
-
->>>>>>> bb90fc5af01f7ae5c6b3f0d97f357d1f8ff663bd
 
 
 function App() {
@@ -40,7 +29,6 @@ function App() {
     <BrowserRouter>
 
       <AppRoutes />
-<<<<<<< HEAD
 
       {/* <Headbar /> */}
       {/* <Sidebar /> */}
@@ -52,8 +40,6 @@ function App() {
       <Add_new_users/>
       <AppRoutes />
       <ListEvent/>
-=======
->>>>>>> bb90fc5af01f7ae5c6b3f0d97f357d1f8ff663bd
     </BrowserRouter>
   );
 }
