@@ -109,7 +109,7 @@ const FormListLogo = ({ onAdd, onUpdate, editData, onClose }) => {
                 </span>
               </>
             )}
-          </label>
+          </label>g
         </div>
         <button
           type="submit"
