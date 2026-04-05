@@ -3,85 +3,49 @@ import { useEffect, useState } from "react";
 
 const BASE_URL = "https://school-management-11-main-oxrub0.laravel.cloud/api";
 
-const getAuthHeaders = () => {
-  // Try all common token key names
-  const token =
-    localStorage.getItem("token") ||
-    localStorage.getItem("access_token") ||
-    localStorage.getItem("auth_token") ||
-    localStorage.getItem("authToken") ||
-    localStorage.getItem("bearerToken") ||
-    sessionStorage.getItem("token") ||
-    sessionStorage.getItem("access_token");
-
-  console.log("Token found:", token); // ← check this in console
-
-  return {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: "application/json",
-    },
-  };
-};
-
 export default function ListEvent() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Modal state
   const [showModal, setShowModal] = useState(false);
   const [modalMode, setModalMode] = useState("create");
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [form, setForm] = useState({ Name: "", Date: "", Description: "" });
   const [submitting, setSubmitting] = useState(false);
 
-  // ── Fetch all events
-  useEffect(() => {
-    const fetchEvent = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const response = await axios.get(
-          "https://school-management-11-main-oxrub0.laravel.cloud/api/event",
-          getAuthHeaders()
-        );
-        console.log(response.data.data);
-        setEvents(response.data.data ?? []);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setError("Failed to load events. Please try again.");
-      } finally {
-        setLoading(false);
+  const fetchEvents = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.get(`${BASE_URL}/event`);
+      
+      // FIX: API returns {status, message, data: {message, data: [events]}}
+      // So events are at response.data.data.data
+      let data = [];
+      if (response.data?.data?.data && Array.isArray(response.data.data.data)) {
+        data = response.data.data.data;
+      } else if (response.data?.data && Array.isArray(response.data.data)) {
+        data = response.data.data;
+      } else if (Array.isArray(response.data)) {
+        data = response.data;
       }
-    };
-
-    fetchEvent();
-  }, []);
-
-  // Re-fetch helper used after create / update / delete
-  const fetchEvents = () => {
-    const fetchEvent = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const response = await axios.get(
-          "https://school-management-11-main-oxrub0.laravel.cloud/api/event",
-          getAuthHeaders()
-        );
-        console.log(response.data.data);
-        setEvents(response.data.data ?? []);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setError("Failed to load events. Please try again.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchEvent();
+      
+      console.log("✅ Events loaded:", data);
+      setEvents(data);
+    } catch (err) {
+      if (axios.isCancel(err)) return;
+      console.error("❌ Fetch error:", err);
+      setError("Failed to load events. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  // ── Open modal helpers
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
   const openCreate = () => {
     setModalMode("create");
     setSelectedEvent(null);
@@ -93,20 +57,19 @@ export default function ListEvent() {
     setModalMode("update");
     setSelectedEvent(event);
     setForm({
-      Name: event.Name ?? event.name ?? "",
-      Date: event.Date ?? event.date ?? "",
-      Description: event.Description ?? event.description ?? "",
+      Name: event.Name ?? "",
+      Date: event.Date ?? "",
+      Description: event.Description ?? "",
     });
     setShowModal(true);
   };
 
-  // ── Create
   const handleCreate = async () => {
     setSubmitting(true);
     try {
-      await axios.post(`${BASE_URL}/event`, form, getAuthHeaders());
+      await axios.post(`${BASE_URL}/event`, form);
       setShowModal(false);
-      fetchEvents();
+      await fetchEvents();
     } catch (err) {
       alert("Failed to create event.");
       console.error(err);
@@ -115,17 +78,12 @@ export default function ListEvent() {
     }
   };
 
-  // ── Update
   const handleUpdate = async () => {
     setSubmitting(true);
     try {
-      await axios.patch(
-        `${BASE_URL}/event/${selectedEvent.id}`,
-        form,
-        getAuthHeaders()
-      );
+      await axios.put(`${BASE_URL}/event/${selectedEvent.EventID}`, form);
       setShowModal(false);
-      fetchEvents();
+      await fetchEvents();
     } catch (err) {
       alert("Failed to update event.");
       console.error(err);
@@ -134,25 +92,35 @@ export default function ListEvent() {
     }
   };
 
-  // ── Delete
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this event?")) return;
     try {
-      await axios.delete(`${BASE_URL}/event/${id}`, getAuthHeaders());
-      fetchEvents();
+      await axios.delete(`${BASE_URL}/event/${id}`);
+      await fetchEvents();
     } catch (err) {
       alert("Failed to delete event.");
       console.error(err);
     }
   };
 
-  // ── Submit dispatcher
   const handleSubmit = () => {
     if (modalMode === "create") handleCreate();
     else handleUpdate();
   };
 
-  // ── Render
+  const getId = (event) => event.EventID ?? event.id;
+  
+  const formatDate = (dateStr) => {
+    if (!dateStr) return "—";
+    try {
+      const date = new Date(dateStr);
+      if (isNaN(date.getTime())) return "—";
+      return date.toLocaleDateString();
+    } catch {
+      return "—";
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 p-4 sm:p-8 font-sans">
       <div className="max-w-6xl mx-auto">
@@ -171,7 +139,6 @@ export default function ListEvent() {
                 Manage and organize school events
               </p>
             </div>
-
             <div className="flex items-center gap-3">
               <span className="px-3 py-1 rounded-xl text-lg font-semibold bg-blue-50 text-blue-700 border border-blue-200">
                 {events.length} Events
@@ -237,22 +204,22 @@ export default function ListEvent() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
-                  {events.map((event) => (
+                  {events.map((event, index) => (
                     <tr
-                      key={event.id}
+                      key={getId(event) || index}
                       className="hover:bg-blue-50 transition duration-200"
                     >
                       <td className="px-6 py-4 text-sm font-mono text-slate-600">
-                        {event.id}
+                        {getId(event) || "—"}
                       </td>
                       <td className="px-6 py-4 text-sm font-medium text-slate-700">
-                        {event.Name ?? event.name}
+                        {event.Name ?? event.name ?? "—"}
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500 max-w-xs truncate">
                         {event.Description ?? event.description ?? "—"}
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500">
-                        {new Date(event.Date ?? event.date).toLocaleDateString()}
+                        {formatDate(event.Date ?? event.date)}
                       </td>
                       <td className="px-6 py-4 text-center space-x-2">
                         <button
@@ -262,7 +229,7 @@ export default function ListEvent() {
                           Update
                         </button>
                         <button
-                          onClick={() => handleDelete(event.id)}
+                          onClick={() => handleDelete(getId(event))}
                           className="px-3 py-1 bg-red-500 text-white text-sm rounded-md hover:bg-red-600 border border-red-600 transition"
                         >
                           Delete
@@ -286,7 +253,6 @@ export default function ListEvent() {
             </h2>
 
             <div className="space-y-4">
-              {/* Name */}
               <div>
                 <label className="block text-sm font-medium text-slate-600 mb-1">
                   Name <span className="text-red-400">*</span>
@@ -300,7 +266,6 @@ export default function ListEvent() {
                 />
               </div>
 
-              {/* Date */}
               <div>
                 <label className="block text-sm font-medium text-slate-600 mb-1">
                   Date <span className="text-red-400">*</span>
@@ -313,7 +278,6 @@ export default function ListEvent() {
                 />
               </div>
 
-              {/* Description */}
               <div>
                 <label className="block text-sm font-medium text-slate-600 mb-1">
                   Description
@@ -328,7 +292,6 @@ export default function ListEvent() {
               </div>
             </div>
 
-            {/* Buttons */}
             <div className="flex justify-end gap-3 mt-6">
               <button
                 onClick={() => setShowModal(false)}
