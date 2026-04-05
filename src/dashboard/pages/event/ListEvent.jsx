@@ -14,10 +14,14 @@ export default function ListEvent() {
   const [form, setForm] = useState({ Name: "", Date: "", Description: "" });
   const [submitting, setSubmitting] = useState(false);
 
-  // NEW: Delete confirmation modal state
+  // Delete confirmation modal state
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [eventToDelete, setEventToDelete] = useState(null);
   const [deleting, setDeleting] = useState(false);
+
+  // NEW: Success alert modal state (requires OK click to close)
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const fetchEvents = async () => {
     setLoading(true);
@@ -49,6 +53,18 @@ export default function ListEvent() {
     fetchEvents();
   }, []);
 
+  // NEW: Show success modal with OK button
+  const showSuccess = (message) => {
+    setSuccessMessage(message);
+    setShowSuccessModal(true);
+  };
+
+  // NEW: Close success modal
+  const closeSuccessModal = () => {
+    setShowSuccessModal(false);
+    setSuccessMessage("");
+  };
+
   const openCreate = () => {
     setModalMode("create");
     setSelectedEvent(null);
@@ -67,20 +83,17 @@ export default function ListEvent() {
     setShowModal(true);
   };
 
-  // NEW: Open delete confirmation modal
   const openDeleteModal = (event) => {
     setEventToDelete(event);
     setShowDeleteModal(true);
   };
 
-  // NEW: Close delete confirmation modal
   const closeDeleteModal = () => {
     setShowDeleteModal(false);
     setEventToDelete(null);
     setDeleting(false);
   };
 
-  // NEW: Handle actual deletion
   const confirmDelete = async () => {
     if (!eventToDelete) return;
     
@@ -90,6 +103,8 @@ export default function ListEvent() {
       await axios.delete(`${BASE_URL}/event/${id}`);
       closeDeleteModal();
       await fetchEvents();
+      // Show success modal with OK button
+      showSuccess(`Event "${eventToDelete.Name}" deleted successfully!`);
     } catch (err) {
       alert("Failed to delete event.");
       console.error(err);
@@ -104,6 +119,8 @@ export default function ListEvent() {
       await axios.post(`${BASE_URL}/event`, form);
       setShowModal(false);
       await fetchEvents();
+      // Show success modal with OK button
+      showSuccess("Event created successfully!");
     } catch (err) {
       alert("Failed to create event.");
       console.error(err);
@@ -118,6 +135,8 @@ export default function ListEvent() {
       await axios.put(`${BASE_URL}/event/${selectedEvent.EventID}`, form);
       setShowModal(false);
       await fetchEvents();
+      // Show success modal with OK button
+      showSuccess(`Event "${form.Name}" updated successfully!`);
     } catch (err) {
       alert("Failed to update event.");
       console.error(err);
@@ -338,7 +357,7 @@ export default function ListEvent() {
         </div>
       )}
 
-      {/* NEW: Delete Confirmation Modal */}
+      {/* Delete Confirmation Modal */}
       {showDeleteModal && eventToDelete && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 transform transition-all">
@@ -397,6 +416,48 @@ export default function ListEvent() {
                 )}
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* NEW: Success Alert Modal with OK Button */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 transform transition-all">
+            {/* Success Icon */}
+            <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+              <svg 
+                className="h-6 w-6 text-green-600" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M5 13l4 4L19 7" 
+                />
+              </svg>
+            </div>
+            
+            {/* Title */}
+            <h3 className="text-lg font-bold text-center text-slate-900 mb-2">
+              Success
+            </h3>
+            
+            {/* Message */}
+            <p className="text-sm text-center text-slate-500 mb-6">
+              {successMessage}
+            </p>
+            
+            {/* OK Button */}
+            <button
+              onClick={closeSuccessModal}
+              className="w-full px-4 py-2 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 rounded-xl transition"
+            >
+              OK
+            </button>
           </div>
         </div>
       )}
