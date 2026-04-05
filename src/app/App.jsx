@@ -34,14 +34,14 @@ import ListEvent from '../dashboard/pages/event/Listevent';
 import FormListLogo from '../public-site/components/FormListLogo';
 
 import Table from '../public-site/pages/User_table_list';
-
-
+import List_Banner from "../dashboard/components/tables/List_Banner";
 
 
 function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
+      <List_Banner/>
     </BrowserRouter>
   );
 }
