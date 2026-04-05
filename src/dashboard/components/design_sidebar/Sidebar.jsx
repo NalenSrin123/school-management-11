@@ -34,7 +34,6 @@ const Sidebar = () => {
           </button>
       
         </div>
-
         <NavItem icon={<GraduationCap size={20} />} label="Users" hasSub />
         <NavItem icon={<BookOpen size={20} />} label="Courses" />
         <NavItem icon={<Calendar size={20} />} label="Logo" />
