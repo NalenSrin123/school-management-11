@@ -1,92 +1,68 @@
-import React from 'react'
-const courseData = [
-  {
-    id: 1,
-    name: "Web Development Bootcamp",
-    description: "Learn HTML, CSS, JavaScript, and build modern responsive websites.",
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-  },
-  {
-    id: 2,
-    name: "React.js for Beginners",
-    description: "Build dynamic web applications using React and modern JavaScript.",
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
-  },
-  {
-    id: 3,
-    name: "UI/UX Design Fundamentals",
-    description: "Learn the principles of user interface and user experience design.",
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e"
-  },
-  {
-    id: 4,
-    name: "Python Programming",
-    description: "Master Python programming from basics to advanced concepts.",
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4"
-  },
-  {
-    id: 5,
-    name: "Data Science Essentials",
-    description: "Learn data analysis, visualization, and machine learning basics.",
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-  },
-  {
-    id: 6,
-    name: "Node.js Backend Development",
-    description: "Build scalable backend APIs using Node.js and Express.",
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c"
-  },
-  {
-    id: 7,
-    name: "Mobile App Development",
-    description: "Create cross-platform mobile apps using modern frameworks.",
-    rating: 4.5,
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"
-  },
-  {
-    id: 8,
-    name: "Cybersecurity Basics",
-    description: "Understand the fundamentals of protecting systems and networks.",
-    rating: 4.4,
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b"
-  }
-  
-];
+import React, { useState, useEffect } from 'react';
 
+const popularcourse = () => {
+    // 1. Setup state for courses and loading
+    const [courses, setCourses] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-const PopularCourse = () => {
-  return (
-    <div className='max-w-7xl h-auto p-6 lg:p-0 mx-auto'>
-        <h3 className='font-extrabold text-3xl text-red-500'>Most Popular Course This Month</h3>
-        <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6 my-7'>
-            {
-                courseData.map(item=>{
-                    return (
-                        <div key={item.id} className='h-[380px] rounded-2xl overflow-hidden border-2 border-gray-300'>
-                            <div className='w-full h-[176px]'>
-                                <img src={item.image} alt="" className='w-full h-full' />
+    // 2. Fetch data when component mounts
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch('https://school-management-11-main-oxrub0.laravel.cloud/api/courses');
+                const data = await response.json();
+                
+                // Assuming the API returns an array or an object with a data property
+                // Adjust based on the actual JSON structure of your API
+                setCourses(data.data || data); 
+                setLoading(false);
+            } catch (error) {
+                console.error("Error fetching courses:", error);
+                setLoading(false);
+            }
+        };
+
+        fetchCourses();
+    }, []);
+
+    if (loading) {
+        return <div className="text-center py-10">Loading awesome courses...</div>;
+    }
+
+    return (
+        <div className='max-w-7xl h-auto p-6 lg:p-0 mx-auto'>
+            <h3 className='font-extrabold text-3xl text-red-500'>Most Popular Course This Month</h3>
+            
+            <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6 my-7'>
+                {courses.map(item => (
+                    <div key={item.id} className='h-[380px] rounded-2xl overflow-hidden border-2 border-gray-300 flex flex-col'>
+                        <div className='w-full h-[176px]'>
+                            <img 
+                                src={item.image} 
+                                alt={item.name} 
+                                className='w-full h-full object-cover' 
+                            />
+                        </div>
+                        
+                        <div className='w-full flex-1 p-3 flex flex-col justify-between'>
+                            <div>
+                                <h4 className='text-2xl font-bold line-clamp-1'>{item.name}</h4>
+                                <p className='line-clamp-3 my-1 text-gray-600 text-sm'>{item.description}</p>
+                                <p className='text-yellow-600 font-semibold'>⭐ {item.rating}</p>
                             </div>
-                            <div className='w-full h-[calc(100%-176px)] p-3'>
-                                <h4 className='text-2xl line-clamp-1'>{item.name}</h4>
-                                <p className='line-clamp-3 my-1'>{item.description}</p>
-                                <p>{item.rating}</p>
-                                <div className='flex justify-end border-0'>
-                                    <button className='px-2 py-2 bg-blue-600 text-white rounded-md outline-0'>Enroll Now</button>
-                                </div>
+                            
+                            <div className='flex justify-end'>
+                                <button className='px-4 py-2 bg-blue-600 hover:bg-blue-700 transition-colors text-white rounded-md'>
+                                    Enroll Now
+                                </button>
                             </div>
                         </div>
-                    )
-                })
-            }
+                    </div>
+                ))}
+            </div>
         </div>
-    </div>
-  )
+    );
 }
 
-export default PopularCourse
+export default popularcourse;
+
