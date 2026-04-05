@@ -11,16 +11,15 @@ import Login from "../services/Login";
 import Sidebar from "../dashboard/components/design_sidebar/Sidebar";
 import Table from "../public-site/pages/User_table_list";
 import Add_new_users from "../dashboard/pages/users/Add_new_users";
+import StudentList from "../dashboard/pages/courses/StudentList";
 import Reset_password from "../public-site/pages/Reset_password";
 import ConfirmOTPpage from "../public-site/pages/ConfirmOTPpage";
 
-
-
 import FormListLogo from "../public-site/components/FormListLogo";
+import CourseCreate from "../dashboard/pages/courses/CourseCreate";
 function AppRoutes() {
   return (
     <Routes>
-    
       <Route element={<Mainlayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -33,6 +32,8 @@ function AppRoutes() {
       <Route path="dashboard" element={<Sidebar />}>
         <Route path="table" element={<Table />} />
         <Route path="add_new_users" element={<Add_new_users />} />
+        <Route path="course_create" element={<CourseCreate />} />
+
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -41,7 +42,6 @@ function AppRoutes() {
       <Route path="/dashboard" element={<Sidebar />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-    
   );
 }
 
