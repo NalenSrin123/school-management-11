@@ -14,14 +14,17 @@ export default function ListEvent() {
   const [form, setForm] = useState({ Name: "", Date: "", Description: "" });
   const [submitting, setSubmitting] = useState(false);
 
+  // NEW: Delete confirmation modal state
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [eventToDelete, setEventToDelete] = useState(null);
+  const [deleting, setDeleting] = useState(false);
+
   const fetchEvents = async () => {
     setLoading(true);
     setError(null);
     try {
       const response = await axios.get(`${BASE_URL}/event`);
       
-      // FIX: API returns {status, message, data: {message, data: [events]}}
-      // So events are at response.data.data.data
       let data = [];
       if (response.data?.data?.data && Array.isArray(response.data.data.data)) {
         data = response.data.data.data;
@@ -64,6 +67,37 @@ export default function ListEvent() {
     setShowModal(true);
   };
 
+  // NEW: Open delete confirmation modal
+  const openDeleteModal = (event) => {
+    setEventToDelete(event);
+    setShowDeleteModal(true);
+  };
+
+  // NEW: Close delete confirmation modal
+  const closeDeleteModal = () => {
+    setShowDeleteModal(false);
+    setEventToDelete(null);
+    setDeleting(false);
+  };
+
+  // NEW: Handle actual deletion
+  const confirmDelete = async () => {
+    if (!eventToDelete) return;
+    
+    setDeleting(true);
+    try {
+      const id = getId(eventToDelete);
+      await axios.delete(`${BASE_URL}/event/${id}`);
+      closeDeleteModal();
+      await fetchEvents();
+    } catch (err) {
+      alert("Failed to delete event.");
+      console.error(err);
+    } finally {
+      setDeleting(false);
+    }
+  };
+
   const handleCreate = async () => {
     setSubmitting(true);
     try {
@@ -89,17 +123,6 @@ export default function ListEvent() {
       console.error(err);
     } finally {
       setSubmitting(false);
-    }
-  };
-
-  const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this event?")) return;
-    try {
-      await axios.delete(`${BASE_URL}/event/${id}`);
-      await fetchEvents();
-    } catch (err) {
-      alert("Failed to delete event.");
-      console.error(err);
     }
   };
 
@@ -229,7 +252,7 @@ export default function ListEvent() {
                           Update
                         </button>
                         <button
-                          onClick={() => handleDelete(getId(event))}
+                          onClick={() => openDeleteModal(event)}
                           className="px-3 py-1 bg-red-500 text-white text-sm rounded-md hover:bg-red-600 border border-red-600 transition"
                         >
                           Delete
@@ -244,7 +267,7 @@ export default function ListEvent() {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Create/Update Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6">
@@ -309,6 +332,69 @@ export default function ListEvent() {
                   : modalMode === "create"
                   ? "Create"
                   : "Save Changes"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* NEW: Delete Confirmation Modal */}
+      {showDeleteModal && eventToDelete && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 transform transition-all">
+            {/* Warning Icon */}
+            <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+              <svg 
+                className="h-6 w-6 text-red-600" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" 
+                />
+              </svg>
+            </div>
+            
+            {/* Title */}
+            <h3 className="text-lg font-bold text-center text-slate-900 mb-2">
+              Delete Event
+            </h3>
+            
+            {/* Message */}
+            <p className="text-sm text-center text-slate-500 mb-6">
+              Are you sure you want to delete <span className="font-semibold text-slate-700">"{eventToDelete.Name}"</span>? 
+              This action cannot be undone.
+            </p>
+            
+            {/* Buttons */}
+            <div className="flex gap-3">
+              <button
+                onClick={closeDeleteModal}
+                disabled={deleting}
+                className="flex-1 px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmDelete}
+                disabled={deleting}
+                className="flex-1 px-4 py-2 text-sm font-semibold text-white bg-red-600 hover:bg-red-700 rounded-xl transition disabled:opacity-50 flex items-center justify-center gap-2"
+              >
+                {deleting ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                    </svg>
+                    Deleting…
+                  </>
+                ) : (
+                  "Delete"
+                )}
               </button>
             </div>
           </div>
