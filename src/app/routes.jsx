@@ -16,10 +16,10 @@ import ConfirmOTPpage from "../public-site/pages/ConfirmOTPpage";
 
 import Mobliemenusetting from "../dashboard/layout/Mobliemenusetting";
 
-import Table from "../public-site/pages/User_table_list";
-import Add_new_users from "../dashboard/pages/users/Add_new_users";
+// import Table from "../public-site/pages/User_table_list";
+// import Add_new_users from "../dashboard/pages/users/Add_new_users";
 
-import FormListLogo from "../public-site/components/FormListLogo";
+// import FormListLogo from "../public-site/components/FormListLogo";
 function AppRoutes() {
   return (
     <Routes>
