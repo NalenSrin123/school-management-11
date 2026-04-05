@@ -15,6 +15,8 @@ import Reset_password from "../public-site/pages/Reset_password";
 import ConfirmOTPpage from "../public-site/pages/ConfirmOTPpage";
 
 import Mobliemenusetting from "../dashboard/layout/Mobliemenusetting";
+import BannerForm from "../dashboard/components/forms/BannerForm";
+import EditBanner from "../dashboard/components/forms/EditBanner";
 
 // import Table from "../public-site/pages/User_table_list";
 // import Add_new_users from "../dashboard/pages/users/Add_new_users";
@@ -31,6 +33,8 @@ function AppRoutes() {
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/page/overview" element={<AdminDashboard />} />
         <Route path="/coursecard" element={<CoursesCard />} />
+        <Route path="/createBanner" element={<BannerForm/>} />
+        <Route path="/edit-banner/:id" element={<EditBanner/>} />
       </Route>
       <Route path="login" element={<Login/>}/>
       <Route path="dashboard" element={<Sidebar/>}/>

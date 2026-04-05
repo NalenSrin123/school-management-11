@@ -43,6 +43,7 @@ function App() {
     <BrowserRouter>
     {/* <RouteMap /> */}
       <AppRoutes />
+
     </BrowserRouter>
   );
 }
