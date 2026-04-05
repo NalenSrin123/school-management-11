@@ -14,7 +14,10 @@ import Add_new_users from "../dashboard/pages/users/Add_new_users";
 import Reset_password from "../public-site/pages/Reset_password";
 import ConfirmOTPpage from "../public-site/pages/ConfirmOTPpage";
 
+import Mobliemenusetting from "../dashboard/layout/Mobliemenusetting";
 
+import Table from "../public-site/pages/User_table_list";
+import Add_new_users from "../dashboard/pages/users/Add_new_users";
 
 import FormListLogo from "../public-site/components/FormListLogo";
 function AppRoutes() {
@@ -29,6 +32,9 @@ function AppRoutes() {
         <Route path="/page/overview" element={<AdminDashboard />} />
         <Route path="/coursecard" element={<CoursesCard />} />
       </Route>
+      <Route path="login" element={<Login/>}/>
+      <Route path="dashboard" element={<Sidebar/>}/>
+      <Route path="/menu-config" element={<Mobliemenusetting/>}/>
       <Route path="login" element={<Login />} />
       <Route path="dashboard" element={<Sidebar />}>
         <Route path="table" element={<Table />} />

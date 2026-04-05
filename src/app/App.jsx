@@ -7,7 +7,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 import AppRoutes from './routes'
 import About from '../public-site/pages/About'
-import MoblieMenuSetting from '../dashboard/layout/MoblieMenuSetting';
 
 import Register from '../services/Register';
 import ConfirmOTPpage from '../public-site/pages/ConfirmOTPpage';
@@ -21,6 +20,14 @@ import Reset_password from '../public-site/pages/Reset_password';
 import Navbar from '../public-site/layout/Navbar';
 import CoursesCard from '../public-site/pages/CoursesCard';
 import Add_new_users from '../dashboard/pages/users/Add_new_users';
+import MoblieMenuSetting from '../dashboard/layout/Mobliemenusetting';
+import List_logo from '../dashboard/layout/List_logo';
+import ListEvent from '../dashboard/pages/event/Listevent';
+import FormListLogo from '../public-site/components/FormListLogo';
+import Fetch_logo from '../dashboard/components/Crud-logo/fetch_logo';
+
+import Table from '../public-site/pages/User_table_list';
+
 
 import List_logo from '../dashboard/layout/List_logo';
 import ListEvent from '../dashboard/pages/event/Listevent';
@@ -35,6 +42,9 @@ function App() {
   return (
     <BrowserRouter>
       <AppRoutes />
+      {/* <List_logo/> */}
+      {/* <MoblieMenuSetting/> */}
+      <Fetch_logo/>
     </BrowserRouter>
   );
 }

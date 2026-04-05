@@ -1,7 +1,7 @@
 import { Home, Wallet } from 'lucide-react'
 import React, { useState } from 'react'
 
-const MoblieMenuSetting =() =>{
+const Mobliemenusetting =() =>{
     const [setting, setSetting] = useState({
         home:true,
         explore:true,
@@ -82,7 +82,7 @@ const MoblieMenuSetting =() =>{
                                     <label className="block text-xs  font-bold text-gray-600 uppercase tracking-wider mb-2">
                                         Enable Trip Planner Tab
                                     </label>
-                                    <input type="Checkbox" checked={FormData.enableTripPlanner} onChange={() => handleInputChange('enableWallet')}
+                                    <input type="Checkbox" checked={FormData.enableTripPlanner} onChange={() => handleInputChange('enableTripPlanner')}
                                     className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer transition duration-150"
                                     />
                                     <p className="text-([120]) text-gray-400 mt-2 italic">Turn on the mode for trip planner tab</p>
@@ -92,7 +92,7 @@ const MoblieMenuSetting =() =>{
                                     <label className="block text-xs  font-bold text-gray-600 uppercase tracking-wider mb-2">
                                         Enable Account Tab
                                     </label>
-                                    <input type="Checkbox" checked={FormData.enableTripPlanner} onChange={() => handleInputChange('enableWallet')}
+                                    <input type="Checkbox" checked={FormData.enableAccount} onChange={() => handleInputChange('enableAccount')}
                                     className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer transition duration-150"
                                     />
                                     <p className="text-([120]) text-gray-400 mt-2 italic">Turn on the mode for account tab</p>
@@ -113,4 +113,4 @@ const MoblieMenuSetting =() =>{
     )
 }
 
-export default MoblieMenuSetting
+export default Mobliemenusetting

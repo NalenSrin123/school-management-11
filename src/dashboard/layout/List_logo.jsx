@@ -4,6 +4,11 @@ import FormListLogo from "../../public-site/components/FormListLogo";
 // Initial static data
 const initialData = [
   { id: "LG-001", image: "", label: "Etec Logo", date: "2024-01-12" },
+  { id: "LG-001", image: "", label: "Etec Logo", date: "2024-01-12" },
+  { id: "LG-001", image: "", label: "Etec Logo", date: "2024-01-12" },
+  { id: "LG-001", image: "", label: "Etec Logo", date: "2024-01-12" },
+  { id: "LG-001", image: "", label: "Etec Logo", date: "2024-01-12" },
+  { id: "LG-001", image: "", label: "Etec Logo", date: "2024-01-12" },
 ];
 
 export default function List_logo() {
