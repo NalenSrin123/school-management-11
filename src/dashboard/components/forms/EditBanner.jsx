@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import profile from '../../../assets/images/profile.jpg';
 import { toast } from 'react-toastify';

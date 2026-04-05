@@ -34,12 +34,9 @@ import ListEvent from '../dashboard/pages/event/Listevent';
 import FormListLogo from '../public-site/components/FormListLogo';
 
 import Table from '../public-site/pages/User_table_list';
-<<<<<<< HEAD
-import List_Banner from "../dashboard/components/tables/List_Banner";
-=======
 import RouteMap from '../public-site/components/RouteMap';
+import List_Banner from "../dashboard/components/tables/List_Banner";
 
->>>>>>> ca8af90433e4788a7bc4f42daaecf69d88bcad44
 
 
 function App() {
