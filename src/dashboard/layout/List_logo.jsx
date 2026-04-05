@@ -7,7 +7,7 @@ const initialData = [
 ];
 
 export default function List_logo() {
-  const [logos, setLogos] = useState(initialData);
+  const [logos, setLogos] = u11seState(initialData);
   const [showForm, setShowForm] = useState(false);
   const [editData, setEditData] = useState(null);
 
