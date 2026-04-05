@@ -34,14 +34,14 @@ import ListEvent from '../dashboard/pages/event/Listevent';
 import FormListLogo from '../public-site/components/FormListLogo';
 
 import Table from '../public-site/pages/User_table_list';
-import RouteMap from '../public-site/components/RouteMap';
+// import RouteMap from '../public-site/components/RouteMap';
 
 
 
 function App() {
   return (
     <BrowserRouter>
-    <RouteMap />
+    {/* <RouteMap /> */}
       <AppRoutes />
     </BrowserRouter>
   );
