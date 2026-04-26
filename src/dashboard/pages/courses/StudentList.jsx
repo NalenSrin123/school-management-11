@@ -14,20 +14,8 @@ export default function Dashboard() {
     const [openMenu, setOpenMenu] = useState(null);
 
     return (
-        <div className="flex h-screen bg-gray-100">
-            {/* Sidebar */}
-            <div className="w-64 bg-white shadow-md p-4">
-                <h1 className="text-xl font-bold mb-6">Owlee</h1>
-                <ul className="space-y-3">
-                    <li className="text-gray-500">Home</li>
-                    <li className="bg-blue-600 text-white p-2 rounded">Students</li>
-                    <li className="text-gray-500">Classes</li>
-                    <li className="text-gray-500">Groups</li>
-                </ul>
-            </div>
-
-            {/* Main Content */}
-            <div className="flex-1 p-6">
+        <div className="min-h-screen bg-gray-100 p-6">
+            <div className="max-w-7xl">
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6">
                     <div className="flex items-center bg-white px-3 py-2 rounded shadow w-1/3">
