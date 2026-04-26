@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FormListLogo from "../../public-site/components/FormListLogo";
+import { useNavigate } from "react-router-dom";
 
 // Initial static data
 const initialData = [
@@ -12,7 +13,8 @@ const initialData = [
 ];
 
 export default function List_logo() {
-  const [logos, setLogos] = u11seState(initialData);
+  const navigate=useNavigate()
+  const [logos, setLogos] = useState(initialData);
   const [showForm, setShowForm] = useState(false);
   const [editData, setEditData] = useState(null);
 
@@ -67,6 +69,7 @@ export default function List_logo() {
                 onClick={() => {
                   setEditData(null);
                   setShowForm(true);
+                  navigate('/dashboard/create_logo')
                 }}
                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition shadow-md">
                 + Add Logo

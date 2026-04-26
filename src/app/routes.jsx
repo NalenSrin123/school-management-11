@@ -17,6 +17,11 @@ import ConfirmOTPpage from "../public-site/pages/ConfirmOTPpage";
 import Mobliemenusetting from "../dashboard/layout/Mobliemenusetting";
 import BannerForm from "../dashboard/components/forms/BannerForm";
 import EditBanner from "../dashboard/components/forms/EditBanner";
+import Dashboard from "../dashboard/pages/courses/StudentList";
+import { User } from "lucide-react";
+import List_logo from "../dashboard/layout/List_logo";
+import ListEvent from "../dashboard/pages/event/Listevent";
+import Create_logo from "../dashboard/layout/Create_logo";
 
 // import Table from "../public-site/pages/User_table_list";
 // import Add_new_users from "../dashboard/pages/users/Add_new_users";
@@ -37,12 +42,16 @@ function AppRoutes() {
         <Route path="/edit-banner/:id" element={<EditBanner/>} />
       </Route>
       <Route path="login" element={<Login/>}/>
-      <Route path="dashboard" element={<Sidebar/>}/>
       <Route path="/menu-config" element={<Mobliemenusetting/>}/>
       <Route path="login" element={<Login />} />
       <Route path="dashboard" element={<Sidebar />}>
-        <Route path="table" element={<Table />} />
-        <Route path="add_new_users" element={<Add_new_users />} />
+        <Route index element={<AdminDashboard/>}/>
+        <Route path="users" element={<Table/>}/>
+        <Route path="course" element={<Dashboard/>}/>
+        <Route path="logo" element={<List_logo/>}/>
+        <Route path="donate" element={<ListEvent/>}/>
+        <Route path="add_new_users" element={<Add_new_users/>}/>
+        <Route path="create_logo" element={<Create_logo/>}/>
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

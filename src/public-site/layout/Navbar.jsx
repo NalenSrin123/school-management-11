@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // ==================== CONFIRM OTP PAGE ====================
 const ConfirmOTPpage = ({ onBack, onClose }) => {
@@ -8,6 +8,14 @@ const ConfirmOTPpage = ({ onBack, onClose }) => {
   const [status, setStatus] = useState({ type: "", message: "" });
   const [loading, setLoading] = useState(false);
   const inputRefs = useRef([]);
+
+  const menus = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Internship", path: "/kruinternship" },
+    { name: "Donate", path: "/donate" },
+    { name: "Our Courses", path: "/coursecard" },
+  ];
 
   useEffect(() => {
     inputRefs.current[0]?.focus();
@@ -597,10 +605,20 @@ function Register({ onClose, onRegisterSuccess, onForgotPassword }) {
   );
 }
 
+
 // ==================== NAVBAR ====================
 const Navbar = () => {
   const [modal, setModal] = useState("idle");
 
+ const menus = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Internship", path: "/kruinternship" },
+    { name: "Donate", path: "/donate" },
+    { name: "Our Courses", path: "/coursecard" },
+  ];
+  const navigate = useNavigate();
+const location = useLocation();
   return (
     <>
       <nav className="sticky top-0 left-0 w-full z-50 px-6 lg:px-16">
@@ -619,19 +637,34 @@ const Navbar = () => {
           </div>
 
           <ul className="hidden lg:flex items-center gap-6 text-[11px] font-bold uppercase tracking-widest">
-            <Link to='/page/overview'><li className="text-[#FF9800] cursor-pointer hover:opacity-80 transition">Overview</li></Link>
-            <Link to='/about'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">About Us</li></Link>
-            <Link to='/kruinternship'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Internship</li></Link>
-            <Link to='/donate'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition">Donate</li></Link>
-            <Link to='/coursecard'><li className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition flex items-center gap-1">
-              Our Courses <span className="text-[10px]">▼</span>
-            </li></Link>
+
+            {menus.map((menu, index) => {
+              const isActive =
+                menu.path === "/"
+                  ? location.pathname === "/"
+                  : location.pathname.startsWith(menu.path);
+
+              return (
+                <li
+                  key={index}
+                  onClick={() => navigate(menu.path)}
+                  className={`${
+                    isActive ? "text-[#FF9800]" : "text-[#0D47A1]"
+                  } cursor-pointer hover:text-[#FF9800] transition`}
+                >
+                  {menu.name}
+                </li>
+              );
+            })}
+
+            {/* Login */}
             <li
-              onClick={() => setModal("login")}
-              className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition normal-case"
+              onClick={() => navigate('/login')}
+              className="text-[#0D47A1] cursor-pointer hover:text-blue-600 transition"
             >
               Login
             </li>
+
           </ul>
 
           <button className="bg-[#2979FF] hover:bg-blue-600 text-white px-8 py-2.5 rounded-full text-[12px] font-bold shadow-md transition-all active:scale-95">

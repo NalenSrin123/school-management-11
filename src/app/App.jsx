@@ -34,6 +34,7 @@ import ListEvent from '../dashboard/pages/event/Listevent';
 import FormListLogo from '../public-site/components/FormListLogo';
 
 import Table from '../public-site/pages/User_table_list';
+import DonatePage from "../public-site/pages/DonatePage";
 // import RouteMap from '../public-site/components/RouteMap';
 
 
@@ -43,7 +44,7 @@ function App() {
     <BrowserRouter>
     {/* <RouteMap /> */}
       <AppRoutes />
-
+      <List_logo/>
     </BrowserRouter>
   );
 }
